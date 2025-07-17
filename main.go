@@ -4,12 +4,16 @@ import (
 	"context"
 	"fmt"
 	"im/global"
+	"im/model/common"
 	"im/routers/router"
 	"im/settings"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
+
+	"github.com/gin-gonic/gin/binding"
+	"github.com/go-playground/validator/v10"
 
 	"github.com/gin-gonic/gin"
 )
@@ -21,17 +25,20 @@ func main() {
 	if global.PublicSetting.Server.RunMode == "release" {
 		gin.SetMode(gin.ReleaseMode)
 	}
-	//todo 校验邮箱的合法性
+	// 验证邮箱的合法性
+	if v, ok := binding.Validator.Engine().(*validator.Validate); ok {
+		_ = v.RegisterValidation("email", common.ValidatorEmail)
+	}
 
 	// 2. 注册路由，返回路由和Socket.IO 服务器实例
-	r, _ := router.NewRouter()
+	r := router.NewRouter()
 	// 3.启动服务（优雅关机）
 	//http.Server 内置的 Shutdown()方法支持优雅关机
 	sever := http.Server{
 		Addr:           global.PublicSetting.Server.HttpPort, //端口号
 		Handler:        r,                                    //路由处理器
 		MaxHeaderBytes: 1 << 20,                              //最大请求头大小(1MB)
-		//设置合适的 MaxHeaderBytes 值，可以确保服务器能够有效地处理请求头，避免不必要地资源浪费或潜在的安全风险
+		//设置合适的 MaxHeaderBytes ，值可以确保服务器能够有效地处理请求头，避免不必要地资源浪费或潜在的安全风险
 	}
 	global.Logger.Info("Server is started!")
 	fmt.Println("AppName:", global.PublicSetting.App.Name,

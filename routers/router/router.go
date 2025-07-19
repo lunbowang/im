@@ -3,6 +3,7 @@ package router
 import (
 	"im/global"
 	"im/middlewares"
+	"im/routers"
 
 	"github.com/XYYSWK/Lutils/pkg/app"
 
@@ -21,6 +22,9 @@ func NewRouter() *gin.Engine {
 			global.Logger.Info("ping", middlewares.ErrLogMsg(ctx)...)
 			reply.Reply(nil, "pong")
 		})
+		rg := routers.Routers
+		rg.User.Init(root)
+		rg.Email.Init(root)
 	}
 	return r
 }

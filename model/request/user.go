@@ -1,0 +1,12 @@
+package request
+
+/*
+定义用户相关的请求参数结构体
+*/
+
+// ParamRegister 注册请求参数
+type ParamRegister struct {
+	Email    string `json:"email" binding:"required"`                 // 邮箱（required 要求该字段必须有值）
+	Password string `json:"password" binding:"required,gte=6,lte=50"` // 密码（该字段是必须的，并且长度介于6——50之间）
+	Code     string `json:"code" binding:"required,gte=6,lte=6"`      // 验证码（6位）
+}

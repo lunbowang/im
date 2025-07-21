@@ -1,6 +1,7 @@
 package logic
 
 import (
+	"errors"
 	"im/dao"
 	db "im/dao/postgresql/sqlc"
 	"im/errcodes"
@@ -12,6 +13,7 @@ import (
 	"github.com/XYYSWK/Lutils/pkg/app/errcode"
 	"github.com/XYYSWK/Lutils/pkg/password"
 	"github.com/gin-gonic/gin"
+	"github.com/jackc/pgx/v4"
 )
 
 type user struct{}
@@ -81,4 +83,57 @@ func (user) Register(ctx *gin.Context, emailStr, pwd, code string) (*reply.Param
 			RefreshToken:  refreshToken,
 		},
 	}, nil
+}
+
+func (user) Login(ctx *gin.Context, emailStr, pwd string) (*reply.ParamLogin, errcode.Err) {
+	userInfo, myerr := getUserInfoByEmail(ctx, emailStr)
+	if myerr != nil {
+		return nil, myerr
+	}
+	if err := password.CheckPassword(pwd, userInfo.Password); err != nil {
+		return nil, errcodes.PasswordNotValid
+	}
+
+	// 创建token
+	accessToken, accessPayload, err := newUserToken(model.UserToken, userInfo.ID, global.PrivateSetting.Token.AccessTokenExpire)
+	if err != nil {
+		global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
+		return nil, errcode.ErrServer
+	}
+	refreshToken, _, err := newUserToken(model.UserToken, userInfo.ID, global.PrivateSetting.Token.RefreshTokenExpire)
+	if err != nil {
+		global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
+		return nil, errcode.ErrServer
+	}
+	if err = dao.Database.Redis.SaveUserToken(ctx, userInfo.ID, []string{accessToken, refreshToken}); err != nil {
+		return nil, errcode.ErrServer.WithDetails(err.Error())
+	}
+	return &reply.ParamLogin{
+		ParamUserInfo: reply.ParamUserInfo{
+			ID:       userInfo.ID,
+			Email:    userInfo.Email,
+			CreateAt: userInfo.CreateAt,
+		},
+		Token: reply.ParamToken{
+			AccessToken:   accessToken,
+			AccessPayload: accessPayload,
+			RefreshToken:  refreshToken,
+		},
+	}, nil
+}
+
+// getUserInfoByEmail 通过邮箱获取用户信息
+// 参数：emailStr 邮箱
+// 成功：用户信息，nil
+// 失败：打印日志 errcodes.UserNotFound, errcode.ErrServer
+func getUserInfoByEmail(ctx *gin.Context, emailStr string) (*db.User, errcode.Err) {
+	userInfo, err := dao.Database.DB.GetUserByEmail(ctx, emailStr)
+	if err != nil {
+		if errors.Is(err, pgx.ErrNoRows) {
+			return nil, errcodes.UserNotFound
+		}
+		global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
+		return nil, errcode.ErrServer
+	}
+	return userInfo, nil
 }

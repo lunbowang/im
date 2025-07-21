@@ -13,5 +13,6 @@ func (user) Init(router *gin.RouterGroup) {
 	r := router.Group("user")
 	{
 		r.POST("register", api.Apis.User.Register)
+		r.POST("login", api.Apis.User.Login)
 	}
 }

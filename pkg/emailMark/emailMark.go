@@ -49,6 +49,7 @@ func (m *EmailMark) SendMark(emailStr, code string) error {
 	if m.CheckUserExist(emailStr) {
 		return ErrSendTooMany
 	}
+	// 记录邮箱
 	m.userMark.Store(emailStr, struct{}{})
 	sendMark := email.NewEmail(&m.config.SMTPInfo)
 	// 发送邮件

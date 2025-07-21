@@ -26,3 +26,8 @@ type ParamRegister struct {
 	ParamUserInfo ParamUserInfo `json:"param_user_info"` //用户信息
 	Token         ParamToken    `json:"token"`           //用户令牌
 }
+
+type ParamLogin struct {
+	ParamUserInfo ParamUserInfo `json:"access_token"` //用户信息
+	Token         ParamToken    `json:"token"`        //用户令牌
+}

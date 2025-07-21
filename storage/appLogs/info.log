@@ -178,3 +178,29 @@
 2025-07-19T17:26:39.615+0800	INFO	middlewares/logger.go:79	/api/email/send	{"status": 200, "method": "POST", "path": "/api/email/send", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
 2025-07-19T18:57:37.911+0800	INFO	im/main.go:68	Shutdown Server ...
 2025-07-19T18:57:37.912+0800	INFO	im/main.go:79	Server exit
+2025-07-21T09:12:03.249+0800	INFO	im/main.go:43	Server is started!
+2025-07-21T09:12:06.414+0800	INFO	middlewares/logger.go:79	/api/email/send	{"status": 200, "method": "POST", "path": "/api/email/send", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0006635}
+2025-07-21T09:12:44.136+0800	INFO	middlewares/logger.go:79	/api/email/send	{"status": 200, "method": "POST", "path": "/api/email/send", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-21T09:13:07.004+0800	INFO	middlewares/logger.go:79	/api/user/register	{"status": 200, "method": "POST", "path": "/api/user/register", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0429718}
+2025-07-21T09:14:40.763+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-21T09:14:40.765+0800	INFO	im/main.go:79	Server exit
+2025-07-21T09:15:43.581+0800	INFO	im/main.go:43	Server is started!
+2025-07-21T09:15:49.533+0800	INFO	middlewares/logger.go:79	/api/email/send	{"status": 200, "method": "POST", "path": "/api/email/send", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005051}
+2025-07-21T09:16:27.995+0800	INFO	middlewares/logger.go:79	/api/user/register	{"status": 200, "method": "POST", "path": "/api/user/register", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0040342}
+2025-07-21T09:30:54.450+0800	INFO	middlewares/logger.go:79	/api/email/send	{"status": 200, "method": "POST", "path": "/api/email/send", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-21T09:30:56.445+0800	INFO	middlewares/logger.go:79	/api/email/send	{"status": 200, "method": "POST", "path": "/api/email/send", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-21T09:40:22.074+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-21T09:40:22.074+0800	INFO	im/main.go:79	Server exit
+2025-07-21T09:41:20.010+0800	INFO	im/main.go:43	Server is started!
+2025-07-21T09:41:27.066+0800	INFO	middlewares/logger.go:79	/api/email/send	{"status": 200, "method": "POST", "path": "/api/email/send", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005057}
+2025-07-21T09:41:55.355+0800	INFO	middlewares/logger.go:79	/api/user/register	{"status": 200, "method": "POST", "path": "/api/user/register", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0029681}
+2025-07-21T09:42:41.846+0800	INFO	middlewares/logger.go:79	/api/email/send	{"status": 200, "method": "POST", "path": "/api/email/send", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-21T09:45:28.427+0800	INFO	middlewares/logger.go:79	/api/email/send	{"status": 200, "method": "POST", "path": "/api/email/send", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-21T09:45:32.850+0800	INFO	middlewares/logger.go:79	/api/email/send	{"status": 200, "method": "POST", "path": "/api/email/send", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-21T09:45:44.634+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-21T09:45:44.634+0800	INFO	im/main.go:79	Server exit
+2025-07-21T09:47:10.170+0800	INFO	im/main.go:43	Server is started!
+2025-07-21T09:47:12.439+0800	INFO	middlewares/logger.go:79	/api/email/send	{"status": 200, "method": "POST", "path": "/api/email/send", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-21T09:47:35.368+0800	INFO	middlewares/logger.go:79	/api/user/register	{"status": 200, "method": "POST", "path": "/api/user/register", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.065665}
+2025-07-21T10:18:13.137+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-21T10:18:13.138+0800	INFO	im/main.go:79	Server exit

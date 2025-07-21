@@ -1,11 +1,14 @@
 package middlewares
 
 import (
+	"im/dao"
 	"im/errcodes"
 	"im/global"
 	"im/model"
 	"net/http"
 	"strings"
+
+	"github.com/XYYSWK/Lutils/pkg/app"
 
 	"github.com/XYYSWK/Lutils/pkg/app/errcode"
 	"github.com/XYYSWK/Lutils/pkg/token"
@@ -77,4 +80,53 @@ func ParseToAuth() func(ctx *gin.Context) {
 		// 后续的处理请求的函数可以通过  ctx.Get(global.PrivateSetting.Token.AuthorizationKey)来获取当前请求的用户信息
 		ctx.Next()
 	}
+}
+
+// MustUser 必须是用户
+func MustUser() gin.HandlerFunc {
+	return func(ctx *gin.Context) {
+		// 创建响应处理器，统一返回错误信息
+		reply := app.NewResponse(ctx)
+
+		// 从上下文获取令牌数据
+		val, ok := ctx.Get(global.PrivateSetting.Token.AuthorizationKey)
+		if !ok {
+			// 未找到令牌
+			reply.Reply(errcodes.AuthNotExist)
+			ctx.Abort()
+			return
+		}
+		// 类型断言，确保令牌数据类型正确
+		data := val.(*model.Content)
+
+		if data.TokenType != model.UserToken {
+			reply.Reply(errcodes.AuthenticationFailed)
+			ctx.Abort()
+			return
+		}
+
+		// 检查数据库中是否存在该用户（通过令牌中的用户ID查询）
+		ok, err := dao.Database.DB.ExistsUserByID(ctx, data.ID)
+		if err != nil {
+			global.Logger.Error(err.Error())
+			reply.Reply(errcode.ErrServer)
+			ctx.Abort()
+			return
+		}
+
+		if !ok {
+			reply.Reply(errcodes.UserNotFound)
+			ctx.Abort()
+			return
+		}
+		ctx.Next()
+	}
+}
+
+func GetTokenContent(ctx *gin.Context) (*model.Content, bool) {
+	value, ok := ctx.Get(global.PrivateSetting.Token.AuthorizationKey)
+	if !ok {
+		return nil, false
+	}
+	return value.(*model.Content), true
 }

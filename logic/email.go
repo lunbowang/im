@@ -22,6 +22,7 @@ type email struct {
 func (email) ExistEmail(ctx *gin.Context, emailStr string) (*reply.ParamExistEmail, errcode.Err) {
 	//先在 redis 缓存中查找
 	ok, err := dao.Database.Redis.ExistEmail(ctx, emailStr)
+	//找到了
 	if err == nil {
 		return &reply.ParamExistEmail{Exist: ok}, nil
 	}
@@ -46,6 +47,7 @@ func CheckEmailNotExists(ctx *gin.Context, emailStr string) errcode.Err {
 	if result.Exist {
 		return errcodes.EmailExists
 	}
+	// 从数据库查询
 	exist, myErr := dao.Database.DB.ExistEmail(ctx, emailStr)
 	if myErr != nil {
 		global.Logger.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)

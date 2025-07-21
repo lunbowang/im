@@ -39,7 +39,7 @@ create table if not exists users (
     id bigserial primary key, -- 用户 id（大自增整数）
     email varchar(255) not null unique, -- 邮箱
     password varchar(255) not null, -- 密码
-    create_at timestamptz not null default now() -- 创建时间（带时区）
+    create_at timestamptz not null default now() + interval '8 hours' -- 创建时间（带时区）
 );
 
 -- 账号

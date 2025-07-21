@@ -10,10 +10,12 @@ const EmailKey = "EmailKey" //email set(无序集合)的键值
 
 // AddEmails 向redis set 中添加 Emails
 func (r *RDB) AddEmails(ctx context.Context, emails ...string) error {
+	// 没有需要添加的邮箱，返回空
 	if len(emails) == 0 {
 		return nil
 	}
 	data := make([]interface{}, len(emails))
+	// 遍历，添加数据
 	for i, email := range emails {
 		data[i] = email
 	}

@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	db "im/dao/postgresql/sqlc"
+	"im/dao/redis/operate"
 
 	"github.com/jackc/pgx/v4"
 
@@ -13,7 +14,7 @@ import (
 // TXer 定义一个接口，用于执行事务相关操作
 type TXer interface {
 	// CreateAccountWithTx 创建账号并建立和自己的关系
-	CreateAccountWithTx(ctx context.Context, maxAccountNum int32, arg *db.CreateAccountParams) error
+	CreateAccountWithTx(ctx context.Context, rdb *operate.RDB, maxAccountNum int32, arg *db.CreateAccountParams) error
 }
 
 // SqlStore 用于处理数据类型

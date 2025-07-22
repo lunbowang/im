@@ -62,3 +62,22 @@ func GetTokenAndPayload(ctx *gin.Context) (string, *token.Payload, error) {
 	// 验证成功，返回令牌字符串和解析后的载荷
 	return tokenString, payload, nil
 }
+
+// newAccountToken token
+// 成功：返回 token，*token.Payload
+// 失败：返回 nil, error
+func newAccountToken(t model.TokenType, id int64) (string, *token.Payload, error) {
+	if t != model.AccountToken {
+		return "", nil, nil
+	}
+	duration := global.PrivateSetting.Token.AccountTokenDuration
+	data, err := model.NewTokenContent(t, id).Marshal()
+	if err != nil {
+		return "", nil, err
+	}
+	result, payload, err := global.TokenMaker.CreateToken(data, duration)
+	if err != nil {
+		return "", nil, err
+	}
+	return result, payload, nil
+}

@@ -5,6 +5,7 @@ type group struct {
 	Logger     log
 	Worker     worker
 	Dao        database
+	GenerateID generateID
 	TokenMaker tokenMaker
 	EmailMark  mark
 }
@@ -19,4 +20,5 @@ func Inits() {
 	Group.Worker.Init()
 	Group.TokenMaker.Init()
 	Group.EmailMark.Init()
+	Group.GenerateID.Init()
 }

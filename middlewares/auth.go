@@ -123,6 +123,46 @@ func MustUser() gin.HandlerFunc {
 	}
 }
 
+// MustAccount 必须是账号
+func MustAccount() gin.HandlerFunc {
+	return func(ctx *gin.Context) {
+		// 创建响应处理器
+		reply := app.NewResponse(ctx)
+
+		// 从上下文获取认证信息
+		val, ok := ctx.Get(global.PrivateSetting.Token.AuthorizationKey)
+		if !ok {
+			reply.Reply(errcodes.AuthNotExist)
+			ctx.Abort()
+			return
+		}
+
+		// 类型断言，确保认证信息类型正确
+		data := val.(*model.Content)
+		if data.TokenType != model.AccountToken {
+			reply.Reply(errcodes.AuthenticationFailed)
+			ctx.Abort()
+			return
+		}
+
+		// 通过数据库验证账号是否存在
+		ok, err := dao.Database.DB.ExistsAccountByID(ctx, data.ID)
+		if err != nil {
+			global.Logger.Error(err.Error(), ErrLogMsg(ctx)...)
+			reply.Reply(errcode.ErrServer)
+			ctx.Abort()
+			return
+		}
+		if !ok {
+			// 账户不存在
+			reply.Reply(errcodes.UserNotFound)
+			ctx.Abort()
+			return
+		}
+		ctx.Next()
+	}
+}
+
 // GetTokenContent 从当前上下文中获取保存的 Content 内容
 func GetTokenContent(ctx *gin.Context) (*model.Content, bool) {
 	value, ok := ctx.Get(global.PrivateSetting.Token.AuthorizationKey)

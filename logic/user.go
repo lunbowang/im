@@ -194,3 +194,108 @@ func getUserInfoByID(ctx *gin.Context, userID int64) (*db.User, errcode.Err) {
 	}
 	return userInfo, nil
 }
+
+// UpdateUserEmail 修改用户邮箱
+func (user) UpdateUserEmail(ctx *gin.Context, userID int64, emailStr, code string) errcode.Err {
+	userInfo, myerr := getUserInfoByID(ctx, userID)
+	if myerr != nil {
+		return myerr
+	}
+	// 判断邮箱是不是之前的邮箱
+	if userInfo.Email == emailStr {
+		return errcodes.EmailSame
+	}
+	// 判断邮箱没有被注册过
+	if err := CheckEmailNotExists(ctx, emailStr); err != nil {
+		return err
+	}
+
+	// 校验验证码
+	if !global.EmailMark.CheckCode(emailStr, code) {
+		return errcodes.EmailCodeNotValid
+	}
+
+	// 数据库更新
+	if err := dao.Database.DB.UpdateUser(ctx, &db.UpdateUserParams{
+		Email:    emailStr,
+		Password: userInfo.Password,
+		ID:       userInfo.ID,
+	}); err != nil {
+		global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
+		return errcode.ErrServer
+	}
+
+	// 更新 redis 中的用户邮箱
+	if err := dao.Database.Redis.UpdateEmail(ctx, userInfo.Email, emailStr); err != nil {
+		global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
+		return errcode.ErrServer
+	}
+
+	//todo 给用户的每个账户推送更改邮箱通知
+	//accessToken,_:=middlewares.GetToken(ctx.Request.Header)
+	//global.Worker.SendTask(task.)
+	return nil
+}
+
+// Logout 退出登录
+func (user) Logout(ctx *gin.Context) errcode.Err {
+	Token, payload, err := GetTokenAndPayload(ctx)
+	if err != nil {
+		global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
+		return errcodes.AuthenticationFailed
+	}
+	content := &model.Content{}
+	_ = content.Unmarshal(payload.Content)
+
+	// 先判断用户在redis中是否存在
+	if ok := dao.Database.Redis.CheckUserTokenValid(ctx, content.ID, Token); !ok {
+		return errcodes.UserNotFound
+	}
+
+	// 将token从redis中删除
+	if err := dao.Database.Redis.DeleteAllTokenByUser(ctx, content.ID); err != nil {
+		return errcode.ErrServer.WithDetails(err.Error())
+	}
+	return nil
+}
+
+// DeleteUser 删除用户
+func (user) DeleteUser(ctx *gin.Context, userID int64) errcode.Err {
+	userInfo, myerr := getUserInfoByID(ctx, userID)
+	if myerr != nil {
+		return myerr
+	}
+
+	//todo 查询user的账户（account）
+
+	// 从 postgresql 中删除 user
+	if err := dao.Database.DB.DeleteUser(ctx, userID); err != nil {
+		global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
+		return errcode.ErrServer
+	}
+
+	// 从 redis 中删除 user 的 email
+	if err := dao.Database.Redis.DeleteEmail(ctx, userInfo.Email); err != nil {
+		global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
+		reTry("deleteEmail:"+userInfo.Email, func() error {
+			return dao.Database.Redis.DeleteEmail(ctx, userInfo.Email)
+		})
+	}
+
+	Token, payload, err := GetTokenAndPayload(ctx)
+	if err != nil {
+		global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
+		return errcodes.AuthenticationFailed
+	}
+	content := &model.Content{}
+	_ = content.Unmarshal(payload.Content)
+	// 先判断用户在redis中是否存在
+	if ok := dao.Database.Redis.CheckUserTokenValid(ctx, content.ID, Token); !ok {
+		return errcodes.UserNotFound
+	}
+	// 将token从redis中删除
+	if err := dao.Database.Redis.DeleteAllTokenByUser(ctx, content.ID); err != nil {
+		return errcode.ErrServer.WithDetails(err.Error())
+	}
+	return nil
+}

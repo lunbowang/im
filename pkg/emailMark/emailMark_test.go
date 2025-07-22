@@ -1,6 +1,7 @@
 package emailMark
 
 import (
+	"im/utils"
 	"log"
 	"testing"
 	"time"
@@ -8,7 +9,6 @@ import (
 	"github.com/stretchr/testify/require"
 
 	"github.com/XYYSWK/Lutils/pkg/email"
-	"github.com/XYYSWK/Lutils/pkg/utils"
 )
 
 func TestSendCode(t *testing.T) {

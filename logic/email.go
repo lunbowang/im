@@ -8,8 +8,7 @@ import (
 	"im/middlewares"
 	"im/model/reply"
 	"im/pkg/emailMark"
-
-	"github.com/XYYSWK/Lutils/pkg/utils"
+	"im/utils"
 
 	"github.com/XYYSWK/Lutils/pkg/app/errcode"
 	"github.com/gin-gonic/gin"

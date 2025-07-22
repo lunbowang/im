@@ -89,7 +89,7 @@ func (m *EmailMark) CheckCode(emailStr, code string) bool {
 	return false
 }
 
-func (EmailMark) getHtml(appName, code string, expireMinutes int) string {
+func (*EmailMark) getHtml(appName, code string, expireMinutes int) string {
 	// 构建HTML邮件内容
 	htmlContent := "<!DOCTYPE html>" +
 		"<html lang=\"zh-CN\">" +

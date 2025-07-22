@@ -123,6 +123,7 @@ func MustUser() gin.HandlerFunc {
 	}
 }
 
+// GetTokenContent 从当前上下文中获取保存的 Content 内容
 func GetTokenContent(ctx *gin.Context) (*model.Content, bool) {
 	value, ok := ctx.Get(global.PrivateSetting.Token.AuthorizationKey)
 	if !ok {

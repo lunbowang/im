@@ -18,6 +18,10 @@ func (user) Init(router *gin.RouterGroup) {
 		updateGroup := r.Group("update").Use(middlewares.MustUser()) // 添加鉴权中间件,以及 MustUser 中间件
 		{
 			updateGroup.PUT("pwd", api.Apis.User.UpdateUserPassword)
+			updateGroup.PUT("email", api.Apis.User.UpdateUserEmail)
+
 		}
+		r.GET("logout", api.Apis.User.Logout)
+		r.DELETE("deleteUser", middlewares.MustUser(), api.Apis.User.DeleteUser)
 	}
 }

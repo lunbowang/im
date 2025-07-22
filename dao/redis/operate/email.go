@@ -27,3 +27,16 @@ func (r *RDB) AddEmails(ctx context.Context, emails ...string) error {
 func (r *RDB) ExistEmail(ctx context.Context, email string) (bool, error) {
 	return r.rdb.SIsMember(ctx, EmailKey, email).Result()
 }
+
+// DeleteEmail 从set 中删除指定的 email
+func (r *RDB) DeleteEmail(ctx context.Context, email string) error {
+	return r.rdb.SRem(ctx, EmailKey, email).Err()
+}
+
+// UpdateEmail 在 set 更新中指定的 email
+func (r *RDB) UpdateEmail(ctx context.Context, oldEmail, newEmail string) error {
+	if err := r.DeleteEmail(ctx, oldEmail); err != nil {
+		return err
+	}
+	return r.rdb.SAdd(ctx, EmailKey, newEmail).Err()
+}

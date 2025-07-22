@@ -82,3 +82,68 @@ func (user) UpdateUserPassword(ctx *gin.Context) {
 	err := logic.Logics.User.UpdateUserPassword(ctx, content.ID, params.Code, params.NewPassword)
 	reply.Reply(err)
 }
+
+// UpdateUserEmail 更新用户邮箱
+// @Tags user
+// @Summary 更新用户邮箱
+// @Security BasicAuth
+// @accept application/json
+// @Produce application/json
+// @Param Authorization header string true "Bearer 用户令牌"
+// @Param data body request.ParamUpdateUserEmail true "新邮箱和验证码"
+// @Success 200 {object} common.State{} "1001:参数有误 1003:系统错误 2001:用户不存在 2004:邮箱验证码校验失败 2005:邮箱相同 2006:邮箱已经注册 2007:身份不存在 2008:身份验证失败"
+// @Router /api/user/update/email [put]
+func (u user) UpdateUserEmail(ctx *gin.Context) {
+	reply := app.NewResponse(ctx)
+	params := new(request.ParamUpdateUserEmail)
+	if err := ctx.ShouldBindJSON(params); err != nil {
+		reply.Reply(errcode.ErrParamsNotValid.WithDetails(err.Error()))
+		return
+	}
+	content, ok := middlewares.GetTokenContent(ctx)
+	if !ok || content.TokenType != model.UserToken {
+		reply.Reply(errcodes.AuthNotExist)
+		return
+	}
+	err := logic.Logics.User.UpdateUserEmail(ctx, content.ID, params.Email, params.Code)
+	reply.Reply(err)
+}
+
+// Logout 用户登出
+// @Tags     Logout
+// @Summary  用户登出
+// @accept   application/json
+// @Produce  application/json
+// @Param Authorization header string true "x-token 用户令牌"
+// @Success  200   {object}  common.State{}  "1001:参数有误 1003:系统错误 3001:邮箱已经注册 "
+// @Router   /api/v1/user/logout [get]
+func (user) Logout(ctx *gin.Context) {
+	reply := app.NewResponse(ctx)
+	if err := logic.Logics.User.Logout(ctx); err != nil {
+		reply.Reply(err)
+		return
+	}
+	reply.Reply(nil, gin.H{
+		"msg": "登出成功",
+	})
+}
+
+// DeleteUser 删除用户
+// @Tags user
+// @Summary 删除用户
+// @Security BasicAuth
+// @accept application/json
+// @Produce application/json
+// @Param Authorization header string true "Bearer 用户令牌"
+// @Success 200 {object} common.State{} "1001:参数有误 1003:系统错误 2001:用户不存在 2007:身份不存在 2008:身份验证失败"
+// @Router /api/user/deleteUser [delete]
+func (user) DeleteUser(ctx *gin.Context) {
+	reply := app.NewResponse(ctx)
+	content, ok := middlewares.GetTokenContent(ctx)
+	if !ok || content.TokenType != model.UserToken {
+		reply.Reply(errcodes.AuthNotExist)
+		return
+	}
+	err := logic.Logics.User.DeleteUser(ctx, content.ID)
+	reply.Reply(err)
+}

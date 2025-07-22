@@ -20,10 +20,18 @@ func (r *RDB) SaveUserToken(ctx *gin.Context, userID int64, tokens []string) err
 	return nil
 }
 
+// DeleteAllTokenByUser 删除所有的用户token
 func (r *RDB) DeleteAllTokenByUser(ctx *gin.Context, userID int64) error {
 	key := utils.LinkStr(UserKey, utils.IDToString(userID))
 	if err := r.rdb.Del(ctx, key).Err(); err != nil {
 		return err
 	}
 	return nil
+}
+
+// CheckUserTokenValid 检查redis中是否存在该用户token
+func (r *RDB) CheckUserTokenValid(ctx *gin.Context, userID int64, token string) bool {
+	key := utils.LinkStr(UserKey, utils.IDToString(userID))
+	ok := r.rdb.SIsMember(ctx, key, token).Val()
+	return ok
 }

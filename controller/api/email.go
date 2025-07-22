@@ -31,3 +31,22 @@ func (email) SendMark(ctx *gin.Context) {
 	err := logic.Logics.Email.SendMark(params.Email)
 	reply.Reply(err)
 }
+
+// ExistEmail 是否已经注册过该 email
+// @Tags email
+// @Summary 是否已经注册过该 email
+// @accept application/json
+// @Produce application/json
+// @Param data query request.ParamExistEmail true "email 是否存在"
+// @Success 200 {object} common.State{Data=reply.ParamExistEmail} "1001:参数有误 1003:系统错误"
+// @Router /api/email/exist [get]
+func (email) ExistEmail(ctx *gin.Context) {
+	reply := app.NewResponse(ctx)
+	params := &request.ParamSendEmail{}
+	if err := ctx.ShouldBindJSON(params); err != nil {
+		reply.Reply(errcode.ErrParamsNotValid.WithDetails(err.Error()))
+		return
+	}
+	result, err := logic.Logics.Email.ExistEmail(ctx, params.Email)
+	reply.Reply(err, result)
+}

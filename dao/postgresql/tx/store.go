@@ -17,6 +17,10 @@ type TXer interface {
 	CreateAccountWithTx(ctx context.Context, rdb *operate.RDB, maxAccountNum int32, arg *db.CreateAccountParams) error
 	// DeleteAccountWithTx 删除账号并删除与之相关的好友关系
 	DeleteAccountWithTx(ctx context.Context, rdb *operate.RDB, accountID int64) error
+	// CreateApplicationTx 判断是否存在申请，不存在则创建申请
+	CreateApplicationTx(ctx context.Context, params *db.CreateApplicationParams) error
+	// AcceptApplicationTx account2 接受 account1 的申请并建立好友关系和双方的关系设置，同时发送消息通知并添加到 redis
+	AcceptApplicationTx(ctx context.Context, rdb *operate.RDB, account1, account2 *db.GetAccountByIDRow) (*db.Message, error)
 }
 
 // SqlStore 用于处理数据类型

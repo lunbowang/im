@@ -431,3 +431,55 @@
 2025-07-23T16:17:34.697+0800	INFO	middlewares/logger.go:79	/api/account/info	{"status": 200, "method": "GET", "path": "/api/account/info", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0009512}
 2025-07-23T16:17:41.689+0800	INFO	im/main.go:68	Shutdown Server ...
 2025-07-23T16:17:41.690+0800	INFO	im/main.go:79	Server exit
+2025-07-23T16:59:31.201+0800	INFO	im/main.go:43	Server is started!
+2025-07-23T16:59:33.564+0800	INFO	middlewares/logger.go:79	/api/application/create	{"status": 404, "method": "POST", "path": "/api/application/create", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-23T17:00:24.152+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-23T17:00:24.152+0800	INFO	im/main.go:79	Server exit
+2025-07-23T17:00:29.436+0800	INFO	im/main.go:43	Server is started!
+2025-07-23T17:01:02.676+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-23T17:01:02.677+0800	INFO	im/main.go:79	Server exit
+2025-07-23T17:01:07.632+0800	INFO	im/main.go:43	Server is started!
+2025-07-23T17:01:11.235+0800	INFO	middlewares/logger.go:79	/api/application/create	{"status": 200, "method": "POST", "path": "/api/application/create", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0020424}
+2025-07-23T17:01:18.537+0800	INFO	middlewares/logger.go:79	/api/application/create	{"status": 200, "method": "POST", "path": "/api/application/create", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0158604}
+2025-07-23T17:02:58.453+0800	INFO	middlewares/logger.go:79	/api/application/create	{"status": 200, "method": "POST", "path": "/api/application/create", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0076231}
+2025-07-23T17:06:13.557+0800	INFO	middlewares/logger.go:79	/api/application/create	{"status": 200, "method": "POST", "path": "/api/application/create", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005377}
+2025-07-23T17:25:45.332+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-23T17:25:45.333+0800	INFO	im/main.go:79	Server exit
+2025-07-23T17:25:52.112+0800	INFO	im/main.go:43	Server is started!
+2025-07-23T17:26:34.176+0800	INFO	middlewares/logger.go:79	/api/application/delete	{"status": 200, "method": "DELETE", "path": "/api/application/delete", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-23T17:26:42.436+0800	INFO	middlewares/logger.go:79	/api/application/delete	{"status": 200, "method": "DELETE", "path": "/api/application/delete", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0042741}
+2025-07-23T17:26:59.003+0800	INFO	middlewares/logger.go:79	/api/application/delete	{"status": 200, "method": "DELETE", "path": "/api/application/delete", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0032394}
+2025-07-23T17:27:58.298+0800	INFO	middlewares/logger.go:79	/api/application/delete	{"status": 200, "method": "DELETE", "path": "/api/application/delete", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005293}
+2025-07-23T17:28:06.368+0800	INFO	middlewares/logger.go:79	/api/application/delete	{"status": 200, "method": "DELETE", "path": "/api/application/delete", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.004366}
+2025-07-23T17:28:19.632+0800	INFO	middlewares/logger.go:79	/api/application/create	{"status": 200, "method": "POST", "path": "/api/application/create", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0006566}
+2025-07-23T17:29:15.920+0800	INFO	middlewares/logger.go:79	/api/application/create	{"status": 200, "method": "POST", "path": "/api/application/create", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0113939}
+2025-07-23T17:29:24.879+0800	INFO	middlewares/logger.go:79	/api/application/delete	{"status": 200, "method": "DELETE", "path": "/api/application/delete", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0074176}
+2025-07-23T17:29:30.511+0800	INFO	middlewares/logger.go:79	/api/application/create	{"status": 200, "method": "POST", "path": "/api/application/create", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0069934}
+2025-07-23T17:29:44.715+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-23T17:29:44.716+0800	INFO	im/main.go:79	Server exit
+2025-07-23T18:31:34.476+0800	INFO	im/main.go:43	Server is started!
+2025-07-23T18:33:32.873+0800	INFO	middlewares/logger.go:79	/api/application/refuse	{"status": 200, "method": "PUT", "path": "/api/application/refuse", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-23T18:33:42.479+0800	INFO	middlewares/logger.go:79	/api/application/refuse	{"status": 200, "method": "PUT", "path": "/api/application/refuse", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0081377}
+2025-07-23T18:34:28.960+0800	INFO	middlewares/logger.go:79	/api/application/create	{"status": 200, "method": "POST", "path": "/api/application/create", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0026012}
+2025-07-23T18:34:34.654+0800	INFO	middlewares/logger.go:79	/api/application/refuse	{"status": 200, "method": "PUT", "path": "/api/application/refuse", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005063}
+2025-07-23T18:35:12.446+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0092929}
+2025-07-23T18:35:26.250+0800	INFO	middlewares/logger.go:79	/api/application/refuse	{"status": 200, "method": "PUT", "path": "/api/application/refuse", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0018203}
+2025-07-23T18:35:42.151+0800	INFO	middlewares/logger.go:79	/api/application/refuse	{"status": 200, "method": "PUT", "path": "/api/application/refuse", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0071959}
+2025-07-23T18:36:17.388+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.000601}
+2025-07-23T18:36:36.911+0800	INFO	middlewares/logger.go:79	/api/application/create	{"status": 200, "method": "POST", "path": "/api/application/create", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0013101}
+2025-07-23T19:25:24.307+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-23T19:25:24.317+0800	INFO	im/main.go:79	Server exit
+2025-07-23T19:25:38.631+0800	INFO	im/main.go:43	Server is started!
+2025-07-23T19:26:53.231+0800	INFO	middlewares/logger.go:79	/api/application/accept	{"status": 200, "method": "PUT", "path": "/api/application/accept", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-23T19:27:02.907+0800	INFO	middlewares/logger.go:79	/api/application/accept	{"status": 200, "method": "PUT", "path": "/api/application/accept", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0059061}
+2025-07-23T19:27:49.329+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0040896}
+2025-07-23T19:28:01.420+0800	INFO	middlewares/logger.go:79	/api/application/accept	{"status": 200, "method": "PUT", "path": "/api/application/accept", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0136426}
+2025-07-23T19:48:25.935+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-23T19:48:25.936+0800	INFO	im/main.go:79	Server exit
+2025-07-23T19:48:34.300+0800	INFO	im/main.go:43	Server is started!
+2025-07-23T19:49:00.923+0800	INFO	middlewares/logger.go:79	/api/application/create	{"status": 200, "method": "POST", "path": "/api/application/create", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0135499}
+2025-07-23T19:49:22.170+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0029387}
+2025-07-23T19:50:11.809+0800	INFO	middlewares/logger.go:79	/api/application/list	{"status": 200, "method": "GET", "path": "/api/application/list", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-23T19:50:18.662+0800	INFO	middlewares/logger.go:79	/api/application/list	{"status": 200, "method": "GET", "path": "/api/application/list", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0020206}
+2025-07-23T19:50:53.048+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-23T19:50:53.048+0800	INFO	im/main.go:79	Server exit

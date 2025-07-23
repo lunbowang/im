@@ -50,31 +50,75 @@ func (store *SqlStore) CreateAccountWithTx(ctx context.Context, rdb *operate.RDB
 			return queries.CreateAccount(ctx, arg)
 		})
 
-		// todo 建立关系（自己与自己的好友关系）
+		// 建立关系（自己与自己的好友关系）
 		// 步骤4：建立账户与自身的好友关系
 		// 允许系统将用户与自身的关系视为特殊好友关系处理
-		//var relationID int64
-		//err = tool.DoThat(err, func() error {
-		//	relationID, err = queries.CreateFriendRelation(ctx, &db.CreateFriendRelationParams{
-		//		Account1ID: arg.ID,
-		//		Account2ID: arg.ID,
-		//	})
-		//	return err
-		//})
+		var relationID int64
+		err = tool.DoThat(err, func() error {
+			relationID, err = queries.CreateFriendRelation(ctx, &db.CreateFriendRelationParams{
+				Account1ID: arg.ID,
+				Account2ID: arg.ID,
+			})
+			return err
+		})
 
-		// todo 步骤5：为该关系创建默认设置
-		//err = tool.DoThat(err, func() error {
-		//	return queries.CreateSetting(ctx, &db.CreateSettingParams{
-		//		AccountID:  arg.ID,
-		//		RelationID: relationID,
-		//		IsSelf:     true,
-		//	})
-		//})
+		// 步骤5：为该关系创建默认设置
+		err = tool.DoThat(err, func() error {
+			return queries.CreateSetting(ctx, &db.CreateSettingParams{
+				AccountID:  arg.ID,
+				RelationID: relationID,
+				IsSelf:     true,
+			})
+		})
 
-		// todo 添加自己一个人的关系到 redis
-		//err=tool.DoThat(err, func() error {
-		//	return rdb.Add
-		//})
+		// 添加自己一个人的关系到 redis
+		err = tool.DoThat(err, func() error {
+			return rdb.AddRelationAccount(ctx, relationID, arg.ID)
+		})
+		return err
+	})
+}
+
+// DeleteAccountWithTx 删除账户
+func (store *SqlStore) DeleteAccountWithTx(ctx context.Context, rdb *operate.RDB, accountID int64) error {
+	return store.execTx(ctx, func(queries *db.Queries) error {
+		var err error
+		// 判断该账户是不是群主
+		var isLeader bool
+		err = tool.DoThat(err, func() error {
+			isLeader, err = queries.ExistsGroupLeaderByAccountIDWithLock(ctx, accountID)
+			return err
+		})
+		if isLeader {
+			return ErrAccountGroupLeader
+		}
+		// 删除好友
+		var friendRelationIDs []int64
+		err = tool.DoThat(err, func() error {
+			friendRelationIDs, err = queries.DeleteFriendRelationsByAccountID(ctx, accountID)
+			return err
+		})
+		// 删除群
+		var groupRelationIDs []int64
+		err = tool.DoThat(err, func() error {
+			groupRelationIDs, err = queries.DeleteSettingsByAccountID(ctx, accountID)
+			return err
+		})
+		// 删除账户
+		err = tool.DoThat(err, func() error {
+			err = queries.DeleteAccount(ctx, accountID)
+			return err
+		})
+
+		// 从redis 中删除对应的关系
+		// 从redis 中删除该账户的好友关系
+		err = tool.DoThat(err, func() error {
+			return rdb.DeleteRelations(ctx, friendRelationIDs...)
+		})
+		// 从redis 中删除该账户所在的群聊中的账户
+		err = tool.DoThat(err, func() error {
+			return rdb.DeleteAccountFromRelations(ctx, accountID, groupRelationIDs...)
+		})
 		return err
 	})
 }

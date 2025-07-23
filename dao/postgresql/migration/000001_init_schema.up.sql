@@ -50,7 +50,7 @@ create table if not exists accounts (
     avatar varchar(255) not null, -- 账号头像
     gender Gender not null default '未知', -- 账号性别
     signature text not null default '这个用户很懒，什么也没有留下~', -- 账号签名
-    create_at timestamptz not null default now(), -- 创建时间
+    create_at timestamptz not null default now()+ interval '8 hours', -- 创建时间
     constraint account_unique_name unique (user_id, name) -- 一个用户的不同账号名不能重复
 );
 
@@ -64,7 +64,7 @@ create table relations
     relation_type RelationType not null, -- 关系类型 group:群组,friend:好友
     group_type GroupType, -- 群组信息，只有群组才有这个字段，否则为 null
     friend_type FriendType, -- 好友信息，只有好友才有这个字段，否则为 null
-    create_at timestamptz default now(), -- 创建时间
+    create_at timestamptz default now()+ interval '8 hours', -- 创建时间
     check (((group_type is null) or (friend_type is null)) and
            ((group_type is not null) or (friend_type is not null))) -- 只能存在一种信息
 );
@@ -77,9 +77,9 @@ create table settings
     nick_name varchar(255) not null, -- 昵称，默认是账户名或群组名
     is_not_disturb boolean not null default false, -- 是否免打扰
     is_pin boolean not null default false, -- 是否置顶
-    pin_time timestamptz not null default now(), -- 置顶时间
+    pin_time timestamptz not null default now()+ interval '8 hours', -- 置顶时间
     is_show boolean not null default true, -- 是否显示
-    last_show timestamptz not null default now(), -- 最后一次显示时间
+    last_show timestamptz not null default now()+ interval '8 hours', -- 最后一次显示时间
     is_leader boolean not null default false, -- 是否是群主，仅对群组有效
     is_self boolean not null default false -- 是否是自己对自己的关系，仅对好友有效
 );

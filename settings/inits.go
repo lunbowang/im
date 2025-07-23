@@ -3,6 +3,7 @@ package settings
 type group struct {
 	Config     config
 	Logger     log
+	Page       page
 	Worker     worker
 	Dao        database
 	GenerateID generateID
@@ -17,6 +18,7 @@ func Inits() {
 	Group.Config.Init()
 	Group.Dao.Init()
 	Group.Logger.Init()
+	Group.Page.Init()
 	Group.Worker.Init()
 	Group.TokenMaker.Init()
 	Group.EmailMark.Init()

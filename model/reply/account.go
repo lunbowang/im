@@ -1,6 +1,9 @@
 package reply
 
-import "im/model/common"
+import (
+	"im/model/common"
+	"time"
+)
 
 /*
 定义账户相关的响应参数结构体
@@ -20,4 +23,26 @@ type ParamAccountInfo struct {
 
 type ParamGetAccountToken struct {
 	AccountToken common.Token `json:"account_token"` // 账号 token
+}
+
+type ParamGetAccountsByUserID struct {
+	List  []ParamAccountInfo `json:"list,omitempty"`  // 账号列表
+	Total int64              `json:"total,omitempty"` // 总数
+}
+
+type ParamFriendInfo struct {
+	ParamAccountInfo
+	RelationID int64 `json:"relation_id,omitempty"` // 好友关系 ID，0表示没有好友关系
+}
+
+type ParamGetAccountsByName struct {
+	List  []*ParamFriendInfo `json:"list,omitempty"`  // 账号列表
+	Total int64              `json:"total,omitempty"` // 总数
+}
+
+type ParamGetAccountByID struct {
+	Info       ParamAccountInfo `json:"info"`                // 账号信息
+	Signature  string           `json:"signature,omitempty"` // 个性签名
+	CreateAt   time.Time        `json:"create_at,omitempty"` // 创建时间
+	RelationID int64            `json:"relation_id"`         // 关系ID，如果不存在则为 0
 }

@@ -233,7 +233,7 @@ func (user) UpdateUserEmail(ctx *gin.Context, userID int64, emailStr, code strin
 
 	//todo 给用户的每个账户推送更改邮箱通知
 	//accessToken,_:=middlewares.GetToken(ctx.Request.Header)
-	//global.Worker.SendTask(task.)
+	//global.Worker.SendTask(task.UpdateEmail(accessToken,userID,emailStr))
 	return nil
 }
 
@@ -265,8 +265,15 @@ func (user) DeleteUser(ctx *gin.Context, userID int64) errcode.Err {
 	if myerr != nil {
 		return myerr
 	}
-
-	//todo 查询user的账户（account）
+	//查询user的账户（account）
+	accountNum, err := dao.Database.DB.CountAccountsByUserID(ctx, userID)
+	if err != nil {
+		global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
+		return errcode.ErrServer
+	}
+	if accountNum > 0 {
+		return errcodes.UserHasAccount
+	}
 
 	// 从 postgresql 中删除 user
 	if err := dao.Database.DB.DeleteUser(ctx, userID); err != nil {

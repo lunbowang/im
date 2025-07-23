@@ -15,6 +15,8 @@ import (
 type TXer interface {
 	// CreateAccountWithTx 创建账号并建立和自己的关系
 	CreateAccountWithTx(ctx context.Context, rdb *operate.RDB, maxAccountNum int32, arg *db.CreateAccountParams) error
+	// DeleteAccountWithTx 删除账号并删除与之相关的好友关系
+	DeleteAccountWithTx(ctx context.Context, rdb *operate.RDB, accountID int64) error
 }
 
 // SqlStore 用于处理数据类型

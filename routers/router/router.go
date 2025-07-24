@@ -8,6 +8,8 @@ import (
 	"github.com/XYYSWK/Lutils/pkg/app"
 
 	"github.com/gin-gonic/gin"
+	swaggerFiles "github.com/swaggo/files"
+	gs "github.com/swaggo/gin-swagger"
 )
 
 func NewRouter() *gin.Engine {
@@ -16,6 +18,7 @@ func NewRouter() *gin.Engine {
 	r.Use(middlewares.Cors(), middlewares.GinLogger(), middlewares.Recovery(true))
 	root := r.Group("api", middlewares.LogBody(), middlewares.ParseToAuth())
 	{
+		root.GET("swagger/*any", gs.WrapHandler(swaggerFiles.Handler))
 		root.GET("/ping", func(ctx *gin.Context) {
 			reply := app.NewResponse(ctx)
 			// 使用...将切片展开为多个参数
@@ -25,9 +28,9 @@ func NewRouter() *gin.Engine {
 		rg := routers.Routers
 		rg.User.Init(root)
 		rg.Email.Init(root)
-
 		rg.Account.Init(root)
 		rg.Application.Init(root)
+		rg.Group.Init(root)
 	}
 	return r
 }

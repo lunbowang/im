@@ -5,6 +5,7 @@ type apis struct {
 	Email       email
 	Account     account
 	Application application
+	Group       group
 }
 
 var Apis = new(apis)

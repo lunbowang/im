@@ -21,6 +21,14 @@ type TXer interface {
 	CreateApplicationTx(ctx context.Context, params *db.CreateApplicationParams) error
 	// AcceptApplicationTx account2 接受 account1 的申请并建立好友关系和双方的关系设置，同时发送消息通知并添加到 redis
 	AcceptApplicationTx(ctx context.Context, rdb *operate.RDB, account1, account2 *db.GetAccountByIDRow) (*db.Message, error)
+	// DeleteRelationWithTx 从数据库中删除关系并删除 redis 中的关系
+	DeleteRelationWithTx(ctx context.Context, rdb *operate.RDB, relationID int64) error
+	// AddSettingWithTx 向数据库和 redis 中同时添加群成员
+	AddSettingWithTx(ctx context.Context, rdb *operate.RDB, accountID, relationID int64, isLeader bool) error
+	// TransferGroupWithTx 转让群
+	TransferGroupWithTx(ctx context.Context, accountID, relationID, toAccountID int64) error
+	// DeleteSettingWithTx 从数据库和 redis 中删除群员
+	DeleteSettingWithTx(ctx context.Context, rdb *operate.RDB, accountID, relationID int64) error
 }
 
 // SqlStore 用于处理数据类型

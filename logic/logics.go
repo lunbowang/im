@@ -5,6 +5,7 @@ type logics struct {
 	Email       email
 	Account     account
 	Application application
+	Group       group
 }
 
 var Logics = new(logics)

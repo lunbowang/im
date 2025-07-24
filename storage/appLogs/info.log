@@ -483,3 +483,168 @@
 2025-07-23T19:50:18.662+0800	INFO	middlewares/logger.go:79	/api/application/list	{"status": 200, "method": "GET", "path": "/api/application/list", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0020206}
 2025-07-23T19:50:53.048+0800	INFO	im/main.go:68	Shutdown Server ...
 2025-07-23T19:50:53.048+0800	INFO	im/main.go:79	Server exit
+2025-07-23T19:55:39.845+0800	INFO	im/main.go:43	Server is started!
+2025-07-23T19:56:05.814+0800	INFO	middlewares/logger.go:79	/api/swagger/	{"status": 404, "method": "GET", "path": "/api/swagger/", "query": "", "ip": "::1", "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "error": "", "cost": 0}
+2025-07-23T19:56:05.931+0800	INFO	middlewares/logger.go:79	/favicon.ico	{"status": 404, "method": "GET", "path": "/favicon.ico", "query": "", "ip": "::1", "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "error": "", "cost": 0}
+2025-07-23T19:56:19.179+0800	INFO	middlewares/logger.go:79	/api/swagger/	{"status": 404, "method": "GET", "path": "/api/swagger/", "query": "", "ip": "::1", "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "error": "", "cost": 0}
+2025-07-23T19:56:23.405+0800	INFO	middlewares/logger.go:79	/api/swagger/123	{"status": 404, "method": "GET", "path": "/api/swagger/123", "query": "", "ip": "::1", "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "error": "", "cost": 0}
+2025-07-23T19:56:30.044+0800	INFO	middlewares/logger.go:79	/api/swagger/index.html	{"status": 200, "method": "GET", "path": "/api/swagger/index.html", "query": "", "ip": "::1", "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "error": "", "cost": 0}
+2025-07-23T19:56:30.071+0800	INFO	middlewares/logger.go:79	/api/swagger/swagger-ui.css	{"status": 200, "method": "GET", "path": "/api/swagger/swagger-ui.css", "query": "", "ip": "::1", "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "error": "", "cost": 0}
+2025-07-23T19:56:30.081+0800	INFO	middlewares/logger.go:79	/api/swagger/swagger-ui-standalone-preset.js	{"status": 200, "method": "GET", "path": "/api/swagger/swagger-ui-standalone-preset.js", "query": "", "ip": "::1", "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "error": "", "cost": 0.0043475}
+2025-07-23T19:56:30.087+0800	INFO	middlewares/logger.go:79	/api/swagger/swagger-ui-bundle.js	{"status": 200, "method": "GET", "path": "/api/swagger/swagger-ui-bundle.js", "query": "", "ip": "::1", "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "error": "", "cost": 0.0118718}
+2025-07-23T19:56:30.203+0800	INFO	middlewares/logger.go:79	/api/swagger/doc.json	{"status": 500, "method": "GET", "path": "/api/swagger/doc.json", "query": "", "ip": "::1", "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "error": "", "cost": 0}
+2025-07-23T19:56:30.254+0800	INFO	middlewares/logger.go:79	/api/swagger/favicon-32x32.png	{"status": 200, "method": "GET", "path": "/api/swagger/favicon-32x32.png", "query": "", "ip": "::1", "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "error": "", "cost": 0}
+2025-07-23T19:56:39.895+0800	INFO	middlewares/logger.go:79	/api/swagger/doc.json	{"status": 500, "method": "GET", "path": "/api/swagger/doc.json", "query": "", "ip": "::1", "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "error": "", "cost": 0}
+2025-07-23T19:57:19.080+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-23T19:57:19.080+0800	INFO	im/main.go:79	Server exit
+2025-07-24T10:15:16.216+0800	INFO	im/main.go:43	Server is started!
+2025-07-24T10:16:48.305+0800	INFO	middlewares/logger.go:79	/api/group/create	{"status": 200, "method": "POST", "path": "/api/group/create", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-24T10:16:58.205+0800	INFO	middlewares/logger.go:79	/api/group/create	{"status": 200, "method": "POST", "path": "/api/group/create", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0163874}
+2025-07-24T10:42:24.459+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-24T10:42:24.469+0800	INFO	im/main.go:79	Server exit
+2025-07-24T10:42:42.066+0800	INFO	im/main.go:43	Server is started!
+2025-07-24T10:43:42.819+0800	INFO	middlewares/logger.go:79	/api/group/invite	{"status": 200, "method": "POST", "path": "/api/group/invite", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-24T10:43:48.668+0800	INFO	middlewares/logger.go:79	/api/group/invite	{"status": 200, "method": "POST", "path": "/api/group/invite", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0040284}
+2025-07-24T10:44:33.965+0800	INFO	middlewares/logger.go:79	/api/group/invite	{"status": 200, "method": "POST", "path": "/api/group/invite", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0019276}
+2025-07-24T10:44:44.490+0800	INFO	middlewares/logger.go:79	/api/group/invite	{"status": 200, "method": "POST", "path": "/api/group/invite", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005052}
+2025-07-24T10:45:19.131+0800	INFO	middlewares/logger.go:79	/api/group/invite	{"status": 200, "method": "POST", "path": "/api/group/invite", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0083094}
+2025-07-24T10:45:52.320+0800	INFO	middlewares/logger.go:79	/api/group/invite	{"status": 200, "method": "POST", "path": "/api/group/invite", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0089954}
+2025-07-24T10:45:59.865+0800	INFO	middlewares/logger.go:79	/api/group/invite	{"status": 200, "method": "POST", "path": "/api/group/invite", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005042}
+2025-07-24T10:47:16.424+0800	INFO	middlewares/logger.go:79	/api/group/invite	{"status": 200, "method": "POST", "path": "/api/group/invite", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0011905}
+2025-07-24T10:49:45.666+0800	INFO	middlewares/logger.go:79	/api/group/invite	{"status": 200, "method": "POST", "path": "/api/group/invite", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.00104}
+2025-07-24T10:49:56.648+0800	INFO	middlewares/logger.go:79	/api/group/invite	{"status": 200, "method": "POST", "path": "/api/group/invite", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005057}
+2025-07-24T10:50:57.164+0800	INFO	middlewares/logger.go:79	/api/group/invite	{"status": 200, "method": "POST", "path": "/api/group/invite", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005043}
+2025-07-24T10:52:25.074+0800	INFO	middlewares/logger.go:79	/api/application/create	{"status": 200, "method": "POST", "path": "/api/application/create", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0049264}
+2025-07-24T10:52:46.474+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.011215}
+2025-07-24T10:53:19.788+0800	INFO	middlewares/logger.go:79	/api/application/accept	{"status": 200, "method": "PUT", "path": "/api/application/accept", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0015146}
+2025-07-24T10:53:30.139+0800	INFO	middlewares/logger.go:79	/api/application/accept	{"status": 200, "method": "PUT", "path": "/api/application/accept", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0115892}
+2025-07-24T10:54:05.671+0800	INFO	middlewares/logger.go:79	/api/group/invite	{"status": 200, "method": "POST", "path": "/api/group/invite", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0010517}
+2025-07-24T10:54:50.268+0800	INFO	middlewares/logger.go:79	/api/group/invite	{"status": 200, "method": "POST", "path": "/api/group/invite", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005066}
+2025-07-24T10:55:12.621+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0009257}
+2025-07-24T10:55:25.035+0800	INFO	middlewares/logger.go:79	/api/group/invite	{"status": 200, "method": "POST", "path": "/api/group/invite", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-24T10:56:03.926+0800	INFO	middlewares/logger.go:79	/api/group/invite	{"status": 200, "method": "POST", "path": "/api/group/invite", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0079436}
+2025-07-24T10:56:09.196+0800	INFO	middlewares/logger.go:79	/api/group/invite	{"status": 200, "method": "POST", "path": "/api/group/invite", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0006371}
+2025-07-24T11:03:50.722+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-24T11:03:50.724+0800	INFO	im/main.go:79	Server exit
+2025-07-24T11:18:45.624+0800	INFO	im/main.go:43	Server is started!
+2025-07-24T11:19:39.105+0800	INFO	middlewares/logger.go:79	/api/group/transfer	{"status": 200, "method": "POST", "path": "/api/group/transfer", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-24T11:19:45.899+0800	INFO	middlewares/logger.go:79	/api/group/transfer	{"status": 200, "method": "POST", "path": "/api/group/transfer", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0036861}
+2025-07-24T11:20:22.891+0800	INFO	middlewares/logger.go:79	/api/group/transfer	{"status": 200, "method": "POST", "path": "/api/group/transfer", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0023334}
+2025-07-24T11:22:39.920+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-24T11:22:39.920+0800	INFO	im/main.go:79	Server exit
+2025-07-24T11:22:44.966+0800	INFO	im/main.go:43	Server is started!
+2025-07-24T11:22:48.735+0800	INFO	middlewares/logger.go:79	/api/group/transfer	{"status": 200, "method": "POST", "path": "/api/group/transfer", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0037906}
+2025-07-24T11:23:16.661+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0060246}
+2025-07-24T11:23:54.013+0800	INFO	middlewares/logger.go:79	/api/group/transfer	{"status": 200, "method": "POST", "path": "/api/group/transfer", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0007707}
+2025-07-24T11:24:00.456+0800	INFO	middlewares/logger.go:79	/api/group/transfer	{"status": 200, "method": "POST", "path": "/api/group/transfer", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0098583}
+2025-07-24T11:26:23.756+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-24T11:26:23.757+0800	INFO	im/main.go:79	Server exit
+2025-07-24T11:26:29.202+0800	INFO	im/main.go:43	Server is started!
+2025-07-24T11:26:33.745+0800	INFO	middlewares/logger.go:79	/api/group/transfer	{"status": 200, "method": "POST", "path": "/api/group/transfer", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0044896}
+2025-07-24T11:27:21.443+0800	INFO	middlewares/logger.go:79	/api/group/transfer	{"status": 200, "method": "POST", "path": "/api/group/transfer", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0090642}
+2025-07-24T11:27:38.610+0800	INFO	middlewares/logger.go:79	/api/group/transfer	{"status": 200, "method": "POST", "path": "/api/group/transfer", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0075754}
+2025-07-24T11:27:54.510+0800	INFO	middlewares/logger.go:79	/api/group/transfer	{"status": 200, "method": "POST", "path": "/api/group/transfer", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005041}
+2025-07-24T11:49:02.454+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-24T11:49:02.455+0800	INFO	im/main.go:79	Server exit
+2025-07-24T11:49:13.343+0800	INFO	im/main.go:43	Server is started!
+2025-07-24T11:49:58.958+0800	INFO	middlewares/logger.go:79	/api/group/dissolve	{"status": 200, "method": "POST", "path": "/api/group/dissolve", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-24T11:50:03.832+0800	INFO	middlewares/logger.go:79	/api/group/dissolve	{"status": 200, "method": "POST", "path": "/api/group/dissolve", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0026047}
+2025-07-24T11:51:36.148+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-24T11:51:36.149+0800	INFO	im/main.go:79	Server exit
+2025-07-24T11:51:40.780+0800	INFO	im/main.go:43	Server is started!
+2025-07-24T11:51:51.768+0800	INFO	middlewares/logger.go:79	/api/group/dissolve	{"status": 200, "method": "POST", "path": "/api/group/dissolve", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0032043}
+2025-07-24T11:51:58.690+0800	INFO	middlewares/logger.go:79	/api/group/dissolve	{"status": 200, "method": "POST", "path": "/api/group/dissolve", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0018004}
+2025-07-24T11:52:22.768+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0047868}
+2025-07-24T11:52:35.800+0800	INFO	middlewares/logger.go:79	/api/group/dissolve	{"status": 200, "method": "POST", "path": "/api/group/dissolve", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005098}
+2025-07-24T11:52:49.731+0800	INFO	middlewares/logger.go:79	/api/group/dissolve	{"status": 200, "method": "POST", "path": "/api/group/dissolve", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0098427}
+2025-07-24T15:21:50.287+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-24T15:21:50.288+0800	INFO	im/main.go:79	Server exit
+2025-07-24T15:28:00.639+0800	INFO	im/main.go:43	Server is started!
+2025-07-24T15:29:00.854+0800	INFO	middlewares/logger.go:79	/api/group/update	{"status": 200, "method": "POST", "path": "/api/group/update", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-24T15:29:07.526+0800	INFO	middlewares/logger.go:79	/api/group/update	{"status": 200, "method": "POST", "path": "/api/group/update", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0033824}
+2025-07-24T15:30:44.399+0800	INFO	middlewares/logger.go:79	/api/group/update	{"status": 200, "method": "POST", "path": "/api/group/update", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.002338}
+2025-07-24T15:31:02.673+0800	INFO	middlewares/logger.go:79	/api/group/update	{"status": 200, "method": "POST", "path": "/api/group/update", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005348}
+2025-07-24T15:31:36.471+0800	INFO	middlewares/logger.go:79	/api/group/create	{"status": 200, "method": "POST", "path": "/api/group/create", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0069847}
+2025-07-24T15:31:53.668+0800	INFO	middlewares/logger.go:79	/api/group/update	{"status": 200, "method": "POST", "path": "/api/group/update", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.000505}
+2025-07-24T15:32:07.423+0800	INFO	middlewares/logger.go:79	/api/group/update	{"status": 200, "method": "POST", "path": "/api/group/update", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-24T15:32:15.199+0800	INFO	middlewares/logger.go:79	/api/group/update	{"status": 200, "method": "POST", "path": "/api/group/update", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0009664}
+2025-07-24T15:32:45.642+0800	INFO	middlewares/logger.go:79	/api/group/update	{"status": 200, "method": "POST", "path": "/api/group/update", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-24T15:33:05.939+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0052075}
+2025-07-24T15:33:17.914+0800	INFO	middlewares/logger.go:79	/api/group/update	{"status": 200, "method": "POST", "path": "/api/group/update", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0026037}
+2025-07-24T15:53:25.938+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-24T15:53:25.939+0800	INFO	im/main.go:79	Server exit
+2025-07-24T15:53:33.390+0800	INFO	im/main.go:43	Server is started!
+2025-07-24T15:54:02.264+0800	INFO	middlewares/logger.go:79	/api/group/list	{"status": 200, "method": "GET", "path": "/api/group/list", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-24T15:54:08.515+0800	INFO	middlewares/logger.go:79	/api/group/list	{"status": 200, "method": "GET", "path": "/api/group/list", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0136296}
+2025-07-24T15:54:49.731+0800	INFO	middlewares/logger.go:79	/api/group/list	{"status": 200, "method": "GET", "path": "/api/group/list", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005069}
+2025-07-24T15:54:59.474+0800	INFO	middlewares/logger.go:79	/api/group/create	{"status": 200, "method": "POST", "path": "/api/group/create", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0057429}
+2025-07-24T15:55:03.208+0800	INFO	middlewares/logger.go:79	/api/group/list	{"status": 200, "method": "GET", "path": "/api/group/list", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0030213}
+2025-07-24T15:55:17.983+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-24T15:55:17.984+0800	INFO	im/main.go:79	Server exit
+2025-07-24T16:14:18.478+0800	INFO	im/main.go:43	Server is started!
+2025-07-24T16:15:09.669+0800	INFO	middlewares/logger.go:79	/api/group/quit	{"status": 200, "method": "POST", "path": "/api/group/quit", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005127}
+2025-07-24T16:15:14.011+0800	INFO	middlewares/logger.go:79	/api/group/quit	{"status": 200, "method": "POST", "path": "/api/group/quit", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0039712}
+2025-07-24T16:15:37.487+0800	INFO	middlewares/logger.go:79	/api/group/quit	{"status": 200, "method": "POST", "path": "/api/group/quit", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0033938}
+2025-07-24T16:16:17.578+0800	INFO	middlewares/logger.go:79	/api/group/quit	{"status": 200, "method": "POST", "path": "/api/group/quit", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0009044}
+2025-07-24T16:16:25.986+0800	INFO	middlewares/logger.go:79	/api/group/invite	{"status": 200, "method": "POST", "path": "/api/group/invite", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.001011}
+2025-07-24T16:16:31.688+0800	INFO	middlewares/logger.go:79	/api/group/invite	{"status": 200, "method": "POST", "path": "/api/group/invite", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0113535}
+2025-07-24T16:18:13.433+0800	INFO	middlewares/logger.go:79	/api/group/quit	{"status": 200, "method": "POST", "path": "/api/group/quit", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0015029}
+2025-07-24T16:18:18.140+0800	INFO	middlewares/logger.go:79	/api/group/quit	{"status": 200, "method": "POST", "path": "/api/group/quit", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.00149}
+2025-07-24T16:19:39.144+0800	INFO	middlewares/logger.go:79	/api/group/quit	{"status": 200, "method": "POST", "path": "/api/group/quit", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-24T16:20:08.395+0800	INFO	middlewares/logger.go:79	/api/group/quit	{"status": 200, "method": "POST", "path": "/api/group/quit", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.007119}
+2025-07-24T16:21:31.421+0800	INFO	middlewares/logger.go:79	/api/group/invite	{"status": 200, "method": "POST", "path": "/api/group/invite", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0077336}
+2025-07-24T16:21:48.266+0800	INFO	middlewares/logger.go:79	/api/group/quit	{"status": 200, "method": "POST", "path": "/api/group/quit", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-24T16:22:27.629+0800	INFO	middlewares/logger.go:79	/api/group/quit	{"status": 200, "method": "POST", "path": "/api/group/quit", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0009644}
+2025-07-24T16:22:32.829+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0050302}
+2025-07-24T16:22:41.286+0800	INFO	middlewares/logger.go:79	/api/group/quit	{"status": 200, "method": "POST", "path": "/api/group/quit", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0066177}
+2025-07-24T16:24:33.134+0800	INFO	middlewares/logger.go:79	/api/group/list	{"status": 200, "method": "GET", "path": "/api/group/list", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0031451}
+2025-07-24T16:43:00.417+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-24T16:43:00.418+0800	INFO	im/main.go:79	Server exit
+2025-07-24T16:43:05.390+0800	INFO	im/main.go:43	Server is started!
+2025-07-24T16:43:11.935+0800	INFO	middlewares/logger.go:79	/api/group/name	{"status": 404, "method": "GET", "path": "/api/group/name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-24T16:43:21.439+0800	INFO	middlewares/logger.go:79	/api/group/name	{"status": 200, "method": "POST", "path": "/api/group/name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0038956}
+2025-07-24T16:43:50.646+0800	INFO	middlewares/logger.go:79	/api/group/name	{"status": 500, "method": "POST", "path": "/api/group/name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 1.4029093}
+2025-07-24T16:46:49.465+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-24T16:46:49.466+0800	INFO	im/main.go:79	Server exit
+2025-07-24T16:46:55.106+0800	INFO	im/main.go:43	Server is started!
+2025-07-24T16:46:58.076+0800	INFO	middlewares/logger.go:79	/api/group/name	{"status": 500, "method": "POST", "path": "/api/group/name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.9546784}
+2025-07-24T16:47:14.434+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-24T16:47:14.434+0800	INFO	im/main.go:79	Server exit
+2025-07-24T16:47:19.830+0800	INFO	im/main.go:43	Server is started!
+2025-07-24T16:47:22.721+0800	INFO	middlewares/logger.go:79	/api/group/name	{"status": 500, "method": "POST", "path": "/api/group/name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.9789721}
+2025-07-24T16:48:39.621+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-24T16:48:39.622+0800	INFO	im/main.go:79	Server exit
+2025-07-24T16:48:44.704+0800	INFO	im/main.go:43	Server is started!
+2025-07-24T16:48:46.467+0800	INFO	middlewares/logger.go:79	/api/group/name	{"status": 200, "method": "POST", "path": "/api/group/name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0065683}
+2025-07-24T16:49:02.887+0800	INFO	middlewares/logger.go:79	/api/group/name	{"status": 200, "method": "POST", "path": "/api/group/name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0014122}
+2025-07-24T16:49:18.210+0800	INFO	middlewares/logger.go:79	/api/group/name	{"status": 200, "method": "POST", "path": "/api/group/name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005042}
+2025-07-24T16:50:32.077+0800	INFO	middlewares/logger.go:79	/api/group/name	{"status": 200, "method": "POST", "path": "/api/group/name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005066}
+2025-07-24T16:50:46.921+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0028181}
+2025-07-24T16:50:56.383+0800	INFO	middlewares/logger.go:79	/api/group/name	{"status": 200, "method": "POST", "path": "/api/group/name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0009661}
+2025-07-24T16:51:05.694+0800	INFO	middlewares/logger.go:79	/api/group/name	{"status": 200, "method": "POST", "path": "/api/group/name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.00107}
+2025-07-24T16:51:19.950+0800	INFO	middlewares/logger.go:79	/api/group/create	{"status": 200, "method": "POST", "path": "/api/group/create", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0090797}
+2025-07-24T16:51:38.257+0800	INFO	middlewares/logger.go:79	/api/group/create	{"status": 200, "method": "POST", "path": "/api/group/create", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0070343}
+2025-07-24T16:51:47.441+0800	INFO	middlewares/logger.go:79	/api/group/name	{"status": 200, "method": "POST", "path": "/api/group/name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-24T16:52:08.953+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0021296}
+2025-07-24T16:52:27.734+0800	INFO	middlewares/logger.go:79	/api/group/name	{"status": 200, "method": "POST", "path": "/api/group/name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005062}
+2025-07-24T16:57:27.989+0800	INFO	middlewares/logger.go:79	/api/group/name	{"status": 200, "method": "POST", "path": "/api/group/name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005586}
+2025-07-24T16:57:35.031+0800	INFO	middlewares/logger.go:79	/api/group/name	{"status": 200, "method": "POST", "path": "/api/group/name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0007696}
+2025-07-24T16:57:46.796+0800	INFO	middlewares/logger.go:79	/api/group/name	{"status": 200, "method": "POST", "path": "/api/group/name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0012149}
+2025-07-24T16:58:16.039+0800	INFO	middlewares/logger.go:79	/api/group/name	{"status": 200, "method": "POST", "path": "/api/group/name", "query": "limit=1&offset=1", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.001318}
+2025-07-24T16:59:34.698+0800	INFO	middlewares/logger.go:79	/api/group/name	{"status": 200, "method": "POST", "path": "/api/group/name", "query": "page=1&pagesize=1", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005068}
+2025-07-24T17:01:53.553+0800	INFO	middlewares/logger.go:79	/api/group/name	{"status": 200, "method": "POST", "path": "/api/group/name", "query": "page=1&pagesize=1", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005303}
+2025-07-24T17:02:29.257+0800	INFO	middlewares/logger.go:79	/api/group/name	{"status": 200, "method": "POST", "path": "/api/group/name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0026357}
+2025-07-24T17:02:53.485+0800	INFO	middlewares/logger.go:79	/api/group/name	{"status": 200, "method": "POST", "path": "/api/group/name", "query": "page=1&pagesize=1", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0010617}
+2025-07-24T17:03:02.961+0800	INFO	middlewares/logger.go:79	/api/group/name	{"status": 200, "method": "POST", "path": "/api/group/name", "query": "page=1&pagesize=2", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0006302}
+2025-07-24T17:13:13.410+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-24T17:13:13.412+0800	INFO	im/main.go:79	Server exit
+2025-07-24T17:13:37.468+0800	INFO	im/main.go:43	Server is started!
+2025-07-24T17:14:12.972+0800	INFO	middlewares/logger.go:79	/api/group/members	{"status": 200, "method": "GET", "path": "/api/group/members", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-24T17:14:35.819+0800	INFO	middlewares/logger.go:79	/api/group/members	{"status": 200, "method": "GET", "path": "/api/group/members", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-24T17:14:41.432+0800	INFO	middlewares/logger.go:79	/api/group/members	{"status": 200, "method": "GET", "path": "/api/group/members", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.003343}
+2025-07-24T17:15:27.058+0800	INFO	middlewares/logger.go:79	/api/group/members	{"status": 200, "method": "GET", "path": "/api/group/members", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0020665}
+2025-07-24T17:15:38.830+0800	INFO	middlewares/logger.go:79	/api/group/members	{"status": 200, "method": "GET", "path": "/api/group/members", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0011462}
+2025-07-24T17:15:50.263+0800	INFO	middlewares/logger.go:79	/api/group/members	{"status": 200, "method": "GET", "path": "/api/group/members", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005058}
+2025-07-24T17:16:00.945+0800	INFO	middlewares/logger.go:79	/api/group/members	{"status": 200, "method": "GET", "path": "/api/group/members", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005848}
+2025-07-24T17:16:10.544+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-24T17:16:10.545+0800	INFO	im/main.go:79	Server exit

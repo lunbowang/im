@@ -97,8 +97,8 @@ create table applications
     apply_msg text not null, -- 申请信息
     refuse_msg text not null, -- 拒绝信息
     status ApplicationStatus not null default '已申请', -- 申请状态
-    create_at timestamptz not null default now(), -- 创建时间
-    update_at timestamptz not null default now(), -- 更新时间
+    create_at timestamptz not null default now()+interval '8 hours', -- 创建时间
+    update_at timestamptz not null default now()+interval '8 hours', -- 更新时间
     constraint f_a_pk primary key (account1_id, account2_id)
 );
 
@@ -113,7 +113,7 @@ create table files
     url varchar(255) not null, -- 文件 url
     relation_id bigint references relations (id) on delete cascade on update cascade, -- 关系 id（外键）
     account_id bigint references accounts (id) on delete cascade on update cascade, -- 发送账号 id（外键）
-    create_at timestamptz not null default now() -- 创建时间
+    create_at timestamptz not null default now() +interval '8 hours'-- 创建时间
 );
 -- 文件关系id索引
 create index file_relation_id on files (relation_id);
@@ -130,11 +130,11 @@ create table messages
     account_id bigint references accounts (id) on delete set null on update cascade, -- 发送账号 id（外键）
     rly_msg_id bigint references messages (id) on delete cascade on update cascade, -- 回复消息 id，没有则为 null（外键）
     relation_id bigint not null references relations (id) on delete cascade on update cascade, -- 关系 id（外键）
-    create_at timestamptz not null default now(), -- 创建时间
+    create_at timestamptz not null default now()+interval '8 hours', -- 创建时间
     is_revoke boolean not null default false, -- 是否撤回
     is_top boolean not null default false, -- 是否置顶
     is_pin boolean not null default false, -- 是否pin
-    pin_time timestamptz not null default now(), -- pin时间
+    pin_time timestamptz not null default now()+interval '8 hours', -- pin时间
     read_ids bigint[] not null default '{}'::bigint[], --一已读用户 id 集合
     msg_content_tsy tsvector, -- 消息分词
     check (notify_type = 'common' or (notify_type = 'system' and account_id is null)), -- 系统消息时发生账号 id 为 null
@@ -163,7 +163,7 @@ create table group_notify
     msg_content text not null, -- 消息内容
     msg_expand json, -- 消息扩展信息
     account_id bigint references accounts (id) on delete cascade on update cascade, -- 发送账号 id（外键）
-    create_at timestamptz not null default now(), -- 创建时间
+    create_at timestamptz not null default now()+interval '8 hours', -- 创建时间
     read_ids bigint[] not null default '{}'::bigint[], -- 已读用户 id 集合
     msg_content_tsv tsvector -- 消息分词
 );
@@ -184,7 +184,7 @@ $$
 begin
     if
         new.is_pin then
-        new.pin_time = now();
+        new.pin_time = now()+interval '8 hours';
     end if;
     return new;
 end;
@@ -211,7 +211,7 @@ create
     or replace function cs_timestamp() returns trigger as
 $$
 begin
-    new.update_at = now();
+    new.update_at = now()+interval '8 hours';
     return new;
 end;
 $$
@@ -231,7 +231,7 @@ $$
 begin
     if
         new.is_show then
-        new.last_show = now();
+        new.last_show = now()+interval '8 hours';
     end if;
     return new;
 end;

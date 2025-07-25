@@ -6,6 +6,7 @@ type routers struct {
 	Account     account
 	Application application
 	Group       group
+	Setting     setting
 }
 
 var Routers = new(routers)

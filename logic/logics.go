@@ -6,6 +6,7 @@ type logics struct {
 	Account     account
 	Application application
 	Group       group
+	Setting     setting
 }
 
 var Logics = new(logics)

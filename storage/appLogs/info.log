@@ -648,3 +648,78 @@
 2025-07-24T17:16:00.945+0800	INFO	middlewares/logger.go:79	/api/group/members	{"status": 200, "method": "GET", "path": "/api/group/members", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005848}
 2025-07-24T17:16:10.544+0800	INFO	im/main.go:68	Shutdown Server ...
 2025-07-24T17:16:10.545+0800	INFO	im/main.go:79	Server exit
+2025-07-24T17:23:58.031+0800	INFO	im/main.go:43	Server is started!
+2025-07-24T17:24:00.394+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-24T17:24:00.395+0800	INFO	im/main.go:79	Server exit
+2025-07-25T15:00:12.438+0800	INFO	im/main.go:43	Server is started!
+2025-07-25T15:00:14.604+0800	INFO	middlewares/logger.go:79	/api/setting/update/nick_name	{"status": 200, "method": "PUT", "path": "/api/setting/update/nick_name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-25T15:00:20.762+0800	INFO	middlewares/logger.go:79	/api/setting/update/nick_name	{"status": 200, "method": "PUT", "path": "/api/setting/update/nick_name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.006722}
+2025-07-25T15:00:53.896+0800	INFO	middlewares/logger.go:79	/api/setting/update/nick_name	{"status": 500, "method": "PUT", "path": "/api/setting/update/nick_name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 2.0174399}
+2025-07-25T15:04:19.448+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-25T15:04:19.449+0800	INFO	im/main.go:79	Server exit
+2025-07-25T15:04:24.974+0800	INFO	im/main.go:43	Server is started!
+2025-07-25T15:04:28.514+0800	INFO	middlewares/logger.go:79	/api/setting/update/nick_name	{"status": 200, "method": "PUT", "path": "/api/setting/update/nick_name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.003989}
+2025-07-25T15:05:05.725+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0156488}
+2025-07-25T15:05:44.471+0800	INFO	middlewares/logger.go:79	/api/setting/update/nick_name	{"status": 200, "method": "PUT", "path": "/api/setting/update/nick_name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.011431}
+2025-07-25T15:06:05.901+0800	INFO	middlewares/logger.go:79	/api/setting/update/nick_name	{"status": 200, "method": "PUT", "path": "/api/setting/update/nick_name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0070492}
+2025-07-25T15:06:25.360+0800	INFO	middlewares/logger.go:79	/api/setting/update/nick_name	{"status": 200, "method": "PUT", "path": "/api/setting/update/nick_name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0010915}
+2025-07-25T15:06:34.192+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-25T15:06:34.193+0800	INFO	im/main.go:79	Server exit
+2025-07-25T16:16:01.622+0800	INFO	im/main.go:43	Server is started!
+2025-07-25T16:17:06.261+0800	INFO	middlewares/logger.go:79	/api/setting/update/pin	{"status": 200, "method": "PUT", "path": "/api/setting/update/pin", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0007876}
+2025-07-25T16:17:10.572+0800	INFO	middlewares/logger.go:79	/api/setting/update/pin	{"status": 200, "method": "PUT", "path": "/api/setting/update/pin", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0050565}
+2025-07-25T16:17:43.744+0800	INFO	middlewares/logger.go:79	/api/setting/update/pin	{"status": 200, "method": "PUT", "path": "/api/setting/update/pin", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0022854}
+2025-07-25T16:17:57.366+0800	INFO	middlewares/logger.go:79	/api/setting/update/pin	{"status": 200, "method": "PUT", "path": "/api/setting/update/pin", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0240144}
+2025-07-25T16:18:11.894+0800	INFO	middlewares/logger.go:79	/api/setting/update/pin	{"status": 200, "method": "PUT", "path": "/api/setting/update/pin", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0265994}
+2025-07-25T16:18:19.940+0800	INFO	middlewares/logger.go:79	/api/setting/update/pin	{"status": 200, "method": "PUT", "path": "/api/setting/update/pin", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0065086}
+2025-07-25T16:18:32.712+0800	INFO	middlewares/logger.go:79	/api/setting/update/pin	{"status": 200, "method": "PUT", "path": "/api/setting/update/pin", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0021384}
+2025-07-25T16:19:57.223+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-25T16:19:57.225+0800	INFO	im/main.go:79	Server exit
+2025-07-25T16:35:21.866+0800	INFO	im/main.go:43	Server is started!
+2025-07-25T16:37:07.369+0800	INFO	middlewares/logger.go:79	/api/setting/update/disturb	{"status": 404, "method": "GET", "path": "/api/setting/update/disturb", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-25T16:37:11.259+0800	INFO	middlewares/logger.go:79	/api/setting/update/disturb	{"status": 200, "method": "PUT", "path": "/api/setting/update/disturb", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-25T16:37:15.329+0800	INFO	middlewares/logger.go:79	/api/setting/update/disturb	{"status": 200, "method": "PUT", "path": "/api/setting/update/disturb", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0135957}
+2025-07-25T16:37:28.031+0800	INFO	middlewares/logger.go:79	/api/setting/update/disturb	{"status": 200, "method": "PUT", "path": "/api/setting/update/disturb", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.01279}
+2025-07-25T16:37:43.754+0800	INFO	middlewares/logger.go:79	/api/setting/update/disturb	{"status": 200, "method": "PUT", "path": "/api/setting/update/disturb", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0061295}
+2025-07-25T16:37:50.199+0800	INFO	middlewares/logger.go:79	/api/setting/update/disturb	{"status": 200, "method": "PUT", "path": "/api/setting/update/disturb", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0064262}
+2025-07-25T16:38:01.438+0800	INFO	middlewares/logger.go:79	/api/setting/update/disturb	{"status": 200, "method": "PUT", "path": "/api/setting/update/disturb", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0056769}
+2025-07-25T16:45:31.130+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-25T16:45:31.131+0800	INFO	im/main.go:79	Server exit
+2025-07-25T16:45:39.050+0800	INFO	im/main.go:43	Server is started!
+2025-07-25T16:46:52.508+0800	INFO	middlewares/logger.go:79	/api/setting/update/show	{"status": 200, "method": "PUT", "path": "/api/setting/update/show", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0050284}
+2025-07-25T16:47:08.369+0800	INFO	middlewares/logger.go:79	/api/setting/update/show	{"status": 200, "method": "PUT", "path": "/api/setting/update/show", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005058}
+2025-07-25T16:47:20.313+0800	INFO	middlewares/logger.go:79	/api/setting/update/show	{"status": 200, "method": "PUT", "path": "/api/setting/update/show", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.007714}
+2025-07-25T16:47:27.632+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-25T16:47:27.632+0800	INFO	im/main.go:79	Server exit
+2025-07-25T17:33:36.394+0800	INFO	im/main.go:43	Server is started!
+2025-07-25T17:34:06.888+0800	INFO	middlewares/logger.go:79	/api/setting/pins	{"status": 500, "method": "GET", "path": "/api/setting/pins", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 1.5164174}
+2025-07-25T17:34:52.281+0800	INFO	middlewares/logger.go:79	/api/setting/pins	{"status": 500, "method": "GET", "path": "/api/setting/pins", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 1.2369835}
+2025-07-25T17:37:15.385+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-25T17:37:15.386+0800	INFO	im/main.go:79	Server exit
+2025-07-25T17:37:20.219+0800	INFO	im/main.go:43	Server is started!
+2025-07-25T17:37:23.986+0800	INFO	middlewares/logger.go:79	/api/setting/pins	{"status": 200, "method": "GET", "path": "/api/setting/pins", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0111006}
+2025-07-25T17:37:42.657+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-25T17:37:42.657+0800	INFO	im/main.go:79	Server exit
+2025-07-25T19:18:05.975+0800	INFO	im/main.go:43	Server is started!
+2025-07-25T19:19:12.731+0800	INFO	middlewares/logger.go:79	/api/setting/shows	{"status": 200, "method": "GET", "path": "/api/setting/shows", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005731}
+2025-07-25T19:19:18.217+0800	INFO	middlewares/logger.go:79	/api/setting/shows	{"status": 200, "method": "GET", "path": "/api/setting/shows", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0135877}
+2025-07-25T19:48:32.246+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-25T19:48:32.247+0800	INFO	im/main.go:79	Server exit
+2025-07-25T19:48:44.303+0800	INFO	im/main.go:43	Server is started!
+2025-07-25T19:49:40.850+0800	INFO	middlewares/logger.go:79	/api/friend/list	{"status": 404, "method": "GET", "path": "/api/friend/list", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-25T19:49:58.849+0800	INFO	middlewares/logger.go:79	/api/setting/friend/list	{"status": 200, "method": "GET", "path": "/api/setting/friend/list", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-25T19:50:04.207+0800	INFO	middlewares/logger.go:79	/api/setting/friend/list	{"status": 200, "method": "GET", "path": "/api/setting/friend/list", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0161863}
+2025-07-25T19:59:54.917+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-25T19:59:54.918+0800	INFO	im/main.go:79	Server exit
+2025-07-25T20:27:12.353+0800	INFO	im/main.go:43	Server is started!
+2025-07-25T20:28:03.986+0800	INFO	middlewares/logger.go:79	/api/setting/friend/list	{"status": 404, "method": "DELETE", "path": "/api/setting/friend/list", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-25T20:28:18.724+0800	INFO	middlewares/logger.go:79	/api/setting/friend/delete	{"status": 200, "method": "DELETE", "path": "/api/setting/friend/delete", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0085384}
+2025-07-25T20:28:42.196+0800	INFO	middlewares/logger.go:79	/api/setting/friend/delete	{"status": 200, "method": "DELETE", "path": "/api/setting/friend/delete", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0230494}
+2025-07-25T20:48:31.339+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-25T20:48:31.341+0800	INFO	im/main.go:79	Server exit
+2025-07-25T20:48:38.388+0800	INFO	im/main.go:43	Server is started!
+2025-07-25T20:49:26.377+0800	INFO	middlewares/logger.go:79	/api/setting/friend/name	{"status": 200, "method": "GET", "path": "/api/setting/friend/name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0029747}
+2025-07-25T20:49:43.721+0800	INFO	middlewares/logger.go:79	/api/setting/friend/name	{"status": 200, "method": "GET", "path": "/api/setting/friend/name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0076969}
+2025-07-25T20:49:57.590+0800	INFO	middlewares/logger.go:79	/api/setting/friend/name	{"status": 200, "method": "GET", "path": "/api/setting/friend/name", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.000875}
+2025-07-25T20:50:02.881+0800	INFO	im/main.go:68	Shutdown Server ...
+2025-07-25T20:50:02.882+0800	INFO	im/main.go:79	Server exit

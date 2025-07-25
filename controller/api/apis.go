@@ -6,6 +6,7 @@ type apis struct {
 	Account     account
 	Application application
 	Group       group
+	Setting     setting
 }
 
 var Apis = new(apis)

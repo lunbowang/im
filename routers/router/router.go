@@ -5,6 +5,8 @@ import (
 	"im/middlewares"
 	"im/routers"
 
+	socketio "github.com/googollee/go-socket.io"
+
 	"github.com/XYYSWK/Lutils/pkg/app"
 
 	"github.com/gin-gonic/gin"
@@ -12,7 +14,7 @@ import (
 	gs "github.com/swaggo/gin-swagger"
 )
 
-func NewRouter() *gin.Engine {
+func NewRouter() (*gin.Engine, *socketio.Server) {
 	//创建一个新的路由
 	r := gin.New()
 	r.Use(middlewares.Cors(), middlewares.GinLogger(), middlewares.Recovery(true))
@@ -33,5 +35,5 @@ func NewRouter() *gin.Engine {
 		rg.Group.Init(root)
 		rg.Setting.Init(root)
 	}
-	return r
+	return r, routers.Routers.Chat.Init(r)
 }

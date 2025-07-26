@@ -1,5 +1,7 @@
 package api
 
+import "im/controller/api/chat"
+
 type apis struct {
 	User        user
 	Email       email
@@ -7,6 +9,7 @@ type apis struct {
 	Application application
 	Group       group
 	Setting     setting
+	Chat        chat.Group
 }
 
 var Apis = new(apis)

@@ -25,13 +25,15 @@ func main() {
 	if global.PublicSetting.Server.RunMode == "release" {
 		gin.SetMode(gin.ReleaseMode)
 	}
+
 	// 验证邮箱的合法性
 	if v, ok := binding.Validator.Engine().(*validator.Validate); ok {
 		_ = v.RegisterValidation("email", common.ValidatorEmail)
 	}
 
 	// 2. 注册路由，返回路由和Socket.IO 服务器实例
-	r := router.NewRouter()
+	r, ws := router.NewRouter()
+
 	// 3.启动服务（优雅关机）
 	//http.Server 内置的 Shutdown()方法支持优雅关机
 	sever := http.Server{
@@ -40,7 +42,7 @@ func main() {
 		MaxHeaderBytes: 1 << 20,                              //最大请求头大小(1MB)
 		//设置合适的 MaxHeaderBytes ，值可以确保服务器能够有效地处理请求头，避免不必要地资源浪费或潜在的安全风险
 	}
-	global.Logger.Info("Server is started!")
+	global.Logger.Info("Server is started!") //输出日志，服务器已启动
 	fmt.Println("AppName:", global.PublicSetting.App.Name,
 		"Version:", global.PublicSetting.App.Version,
 		"Address:", global.PublicSetting.Server.HttpPort,
@@ -57,10 +59,20 @@ func main() {
 		}
 	}()
 
+	// 启动 Socket.IO 服务器
+	go func() {
+		defer ws.Close()
+		// 接收并处理网络连接
+		if err := ws.Serve(); err != nil {
+			errChan <- err
+		}
+	}()
+
 	// 优雅退出
 	// 创建一个接收信号的通道
 	quit := make(chan os.Signal, 1)                      //os.Signal 标识操作系统的信号，比如终端信号、终止信号等。
 	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM) //signal.Notify 把收到的 syscall.SIGINT或syscall.SIGTERM 信号转发给quit
+
 	select {
 	case err := <-errChan:
 		global.Logger.Error(err.Error())
@@ -77,5 +89,4 @@ func main() {
 	}
 
 	global.Logger.Info("Server exit")
-
 }

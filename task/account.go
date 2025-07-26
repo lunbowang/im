@@ -19,6 +19,5 @@ func UpdateEmail(accessToken string, userID int64, email string) func() {
 			global.Logger.Error(err.Error())
 			return
 		}
-
 	}
 }

@@ -1,6 +1,10 @@
 package model
 
-import "encoding/json"
+import (
+	"encoding/json"
+
+	"github.com/XYYSWK/Lutils/pkg/token"
+)
 
 type TokenType string
 
@@ -12,6 +16,13 @@ const (
 type Content struct {
 	TokenType TokenType `json:"token_type,omitempty"` // token 类型，用户token\账户token
 	ID        int64     `json:"id,omitempty"`
+}
+
+// Token 结合 Token、token.Payload 和 Content
+type Token struct {
+	AccessToken string
+	Payload     *token.Payload
+	Content     *Content
 }
 
 // Unmarshal 将json序列解析为Content 结构体

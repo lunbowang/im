@@ -7,6 +7,7 @@ type routers struct {
 	Application application
 	Group       group
 	Setting     setting
+	Chat        ws
 }
 
 var Routers = new(routers)

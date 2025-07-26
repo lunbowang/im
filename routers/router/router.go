@@ -1,6 +1,7 @@
 package router
 
 import (
+	_ "im/docs"
 	"im/global"
 	"im/middlewares"
 	"im/routers"
@@ -34,6 +35,7 @@ func NewRouter() (*gin.Engine, *socketio.Server) {
 		rg.Application.Init(root)
 		rg.Group.Init(root)
 		rg.Setting.Init(root)
+		rg.File.Init(root)
 	}
 	return r, routers.Routers.Chat.Init(r)
 }

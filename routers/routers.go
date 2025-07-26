@@ -8,6 +8,7 @@ type routers struct {
 	Group       group
 	Setting     setting
 	Chat        ws
+	File        file
 }
 
 var Routers = new(routers)

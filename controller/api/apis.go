@@ -10,6 +10,7 @@ type apis struct {
 	Group       group
 	Setting     setting
 	Chat        chat.Group
+	File        file
 }
 
 var Apis = new(apis)

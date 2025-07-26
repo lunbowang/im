@@ -7,6 +7,7 @@ type logics struct {
 	Application application
 	Group       group
 	Setting     setting
+	File        file
 }
 
 var Logics = new(logics)

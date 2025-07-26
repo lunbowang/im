@@ -22,7 +22,7 @@ type user struct {
 // @accept application/json
 // @Produce application/json
 // @Param data body request.ParamRegister true "用户注册信息"
-// @Success 200 {object} common.State{data=reply.ParamRegister} "1001:参数有误 1003:系统错误 2004:邮箱验证码校验失败 2006:邮箱已经注册"
+// @Success 200 {object} common.State "1001:参数有误 1003:系统错误 2004:邮箱验证码校验失败 2006:邮箱已经注册"
 // @Router /api/user/register [post]
 func (user) Register(ctx *gin.Context) {
 	// 1.获取参数和参数校验
@@ -44,7 +44,7 @@ func (user) Register(ctx *gin.Context) {
 // @accept application/json
 // @Produce application/json
 // @Param data body request.ParamLogin true "用户登录信息"
-// @Success 200 {object} common.State{data=reply.ParamLogin} "1001:参数错误 1003:系统错误 2001:用户不存在"
+// @Success 200 {object} common.State "1001:参数错误 1003:系统错误 2001:用户不存在"
 // @Router /api/user/login [post]
 func (user) Login(ctx *gin.Context) {
 	reply := app.NewResponse(ctx)

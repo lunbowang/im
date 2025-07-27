@@ -24,11 +24,11 @@ Token:
   AuthorizationKey: Authorization
   AuthorizationType: Bearer
 HuaWeiOBS:
-  BucketName: chatroom-bucket # 存储桶名称
-  BucketUrl: https://chatroom-bucket.obs.cn-north-4.myhuaweicloud.com # 存储桶 URL
+  BucketName: chatroom-bucket-d206 # 存储桶名称
+  BucketUrl: chatroom-bucket-d206.obs.cn-north-4.myhuaweicloud.com # 存储桶 URL
   Location: cn-north-4 # 华北-北京四
-  Endpoint: https://obs.cn-north-4.myhuaweicloud.com # 华北-北京四
-  BasePath: uploads/ # 上传文件时，文件在存储桶中的基础路径
+  Endpoint: obs.cn-north-4.myhuaweicloud.com # 华北-北京四
+  BasePath: uploads # 上传文件时，文件在存储桶中的基础路径
   AvatarType: NotAvatar
   AccountAvatarUrl: account_avatars/
   GroupAvatarUrl: group_avatars/ # 群组头像 URL

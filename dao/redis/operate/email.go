@@ -40,3 +40,11 @@ func (r *RDB) UpdateEmail(ctx context.Context, oldEmail, newEmail string) error 
 	}
 	return r.rdb.SAdd(ctx, EmailKey, newEmail).Err()
 }
+
+// ReloadEmails 从 set 中重新加载 email 集合(删除 set 集合中的所有 emails，并重新添加)
+func (r *RDB) ReloadEmails(ctx context.Context, emails ...string) error {
+	if err := r.rdb.Del(ctx, EmailKey).Err(); err != nil {
+		return err
+	}
+	return r.AddEmails(ctx, emails...)
+}

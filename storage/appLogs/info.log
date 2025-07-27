@@ -818,3 +818,85 @@
 2025-07-26T20:27:47.123+0800	INFO	middlewares/logger.go:79	/api/file/publish	{"status": 200, "method": "POST", "path": "/api/file/publish", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
 2025-07-26T20:30:49.123+0800	INFO	im/main.go:80	Shutdown Server ...
 2025-07-26T20:30:49.124+0800	INFO	im/main.go:91	Server exit
+2025-07-26T20:42:03.690+0800	INFO	im/main.go:45	Server is started!
+2025-07-26T20:42:06.363+0800	INFO	middlewares/logger.go:79	/api/file/publish	{"status": 200, "method": "POST", "path": "/api/file/publish", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0006736}
+2025-07-26T20:42:42.684+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0098337}
+2025-07-26T20:42:55.234+0800	INFO	middlewares/logger.go:79	/api/file/publish	{"status": 200, "method": "POST", "path": "/api/file/publish", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0255189}
+2025-07-26T20:43:51.341+0800	INFO	middlewares/logger.go:79	/api/file/publish	{"status": 200, "method": "POST", "path": "/api/file/publish", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0075293}
+2025-07-26T20:44:02.709+0800	INFO	middlewares/logger.go:79	/api/file/publish	{"status": 200, "method": "POST", "path": "/api/file/publish", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0116898}
+2025-07-26T20:44:20.059+0800	INFO	middlewares/logger.go:79	/api/file/publish	{"status": 200, "method": "POST", "path": "/api/file/publish", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0106645}
+2025-07-26T20:46:41.445+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-26T20:46:41.446+0800	INFO	im/main.go:91	Server exit
+2025-07-26T20:46:43.716+0800	INFO	im/main.go:45	Server is started!
+2025-07-26T20:46:45.014+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-26T20:46:45.015+0800	INFO	im/main.go:91	Server exit
+2025-07-26T20:47:00.404+0800	INFO	im/main.go:45	Server is started!
+2025-07-26T20:47:12.511+0800	INFO	middlewares/logger.go:79	/api/file/publish	{"status": 200, "method": "POST", "path": "/api/file/publish", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0123418}
+2025-07-26T20:53:19.940+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-26T20:53:19.941+0800	INFO	im/main.go:91	Server exit
+2025-07-27T14:13:27.083+0800	INFO	im/main.go:45	Server is started!
+2025-07-27T14:14:13.787+0800	INFO	middlewares/logger.go:79	/api/file/delete	{"status": 200, "method": "DELETE", "path": "/api/file/delete", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0280973}
+2025-07-27T14:14:33.220+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-27T14:14:33.221+0800	INFO	im/main.go:91	Server exit
+2025-07-27T14:25:24.924+0800	INFO	im/main.go:45	Server is started!
+2025-07-27T14:26:44.785+0800	INFO	middlewares/logger.go:79	/api/file/getFiles	{"status": 404, "method": "GET", "path": "/api/file/getFiles", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-27T14:27:02.949+0800	INFO	middlewares/logger.go:79	/api/file/getFiles	{"status": 200, "method": "POST", "path": "/api/file/getFiles", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0128544}
+2025-07-27T14:27:09.179+0800	INFO	middlewares/logger.go:79	/api/file/getFiles	{"status": 200, "method": "POST", "path": "/api/file/getFiles", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.001259}
+2025-07-27T14:27:14.926+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-27T14:27:14.927+0800	INFO	im/main.go:91	Server exit
+2025-07-27T14:27:27.352+0800	INFO	im/main.go:45	Server is started!
+2025-07-27T14:27:31.965+0800	INFO	middlewares/logger.go:79	/api/file/getFiles	{"status": 200, "method": "GET", "path": "/api/file/getFiles", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0028782}
+2025-07-27T14:28:08.827+0800	INFO	middlewares/logger.go:79	/api/file/getFiles	{"status": 200, "method": "GET", "path": "/api/file/getFiles", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005304}
+2025-07-27T14:28:17.112+0800	INFO	middlewares/logger.go:79	/api/file/getFiles	{"status": 200, "method": "GET", "path": "/api/file/getFiles", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005819}
+2025-07-27T14:28:34.103+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-27T14:28:34.104+0800	INFO	im/main.go:91	Server exit
+2025-07-27T14:28:40.464+0800	INFO	im/main.go:45	Server is started!
+2025-07-27T14:28:42.937+0800	INFO	middlewares/logger.go:79	/api/file/getFiles	{"status": 200, "method": "POST", "path": "/api/file/getFiles", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0040652}
+2025-07-27T14:28:48.615+0800	INFO	middlewares/logger.go:79	/api/file/getFiles	{"status": 200, "method": "POST", "path": "/api/file/getFiles", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0025658}
+2025-07-27T14:29:01.607+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-27T14:29:01.608+0800	INFO	im/main.go:91	Server exit
+2025-07-27T14:30:08.069+0800	INFO	im/main.go:45	Server is started!
+2025-07-27T14:30:13.430+0800	INFO	middlewares/logger.go:79	/api/file/getFiles	{"status": 200, "method": "GET", "path": "/api/file/getFiles", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0048011}
+2025-07-27T14:30:25.703+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-27T14:30:25.703+0800	INFO	im/main.go:91	Server exit
+2025-07-27T15:14:36.854+0800	INFO	im/main.go:45	Server is started!
+2025-07-27T15:15:01.983+0800	INFO	middlewares/logger.go:79	/api/file/publish	{"status": 200, "method": "POST", "path": "/api/file/publish", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 2.9729233}
+2025-07-27T15:18:12.152+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-27T15:18:12.153+0800	INFO	im/main.go:91	Server exit
+2025-07-27T15:18:17.615+0800	INFO	im/main.go:45	Server is started!
+2025-07-27T15:18:21.201+0800	INFO	middlewares/logger.go:79	/api/file/publish	{"status": 200, "method": "POST", "path": "/api/file/publish", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.3304755}
+2025-07-27T15:18:28.903+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-27T15:18:28.904+0800	INFO	im/main.go:91	Server exit
+2025-07-27T15:24:59.123+0800	INFO	im/main.go:45	Server is started!
+2025-07-27T15:25:01.750+0800	INFO	middlewares/logger.go:79	/api/file/publish	{"status": 200, "method": "POST", "path": "/api/file/publish", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.3780567}
+2025-07-27T15:26:44.025+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-27T15:26:44.026+0800	INFO	im/main.go:91	Server exit
+2025-07-27T15:26:47.881+0800	INFO	im/main.go:45	Server is started!
+2025-07-27T15:26:52.261+0800	INFO	middlewares/logger.go:79	/api/file/publish	{"status": 200, "method": "POST", "path": "/api/file/publish", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.3015047}
+2025-07-27T15:30:32.311+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-27T15:30:32.311+0800	INFO	im/main.go:91	Server exit
+2025-07-27T15:30:36.300+0800	INFO	im/main.go:45	Server is started!
+2025-07-27T15:30:39.703+0800	INFO	middlewares/logger.go:79	/api/file/publish	{"status": 200, "method": "POST", "path": "/api/file/publish", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.3379238}
+2025-07-27T15:36:24.178+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-27T15:36:24.179+0800	INFO	im/main.go:91	Server exit
+2025-07-27T15:36:27.962+0800	INFO	im/main.go:45	Server is started!
+2025-07-27T15:36:31.917+0800	INFO	middlewares/logger.go:79	/api/file/publish	{"status": 200, "method": "POST", "path": "/api/file/publish", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.3502248}
+2025-07-27T15:36:39.001+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-27T15:36:39.002+0800	INFO	im/main.go:91	Server exit
+2025-07-27T15:51:00.532+0800	INFO	im/main.go:45	Server is started!
+2025-07-27T15:51:39.167+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-27T15:51:39.168+0800	INFO	im/main.go:91	Server exit
+2025-07-27T15:51:45.464+0800	INFO	im/main.go:45	Server is started!
+2025-07-27T15:52:14.403+0800	INFO	middlewares/logger.go:79	/api/file/details	{"status": 200, "method": "GET", "path": "/api/file/details", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-27T15:52:20.133+0800	INFO	middlewares/logger.go:79	/api/file/details	{"status": 200, "method": "GET", "path": "/api/file/details", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0061595}
+2025-07-27T15:52:34.693+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-27T15:52:34.693+0800	INFO	im/main.go:91	Server exit
+2025-07-27T15:52:39.704+0800	INFO	im/main.go:45	Server is started!
+2025-07-27T15:52:41.865+0800	INFO	middlewares/logger.go:79	/api/file/details	{"status": 200, "method": "GET", "path": "/api/file/details", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0076449}
+2025-07-27T15:53:50.017+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-27T15:53:50.018+0800	INFO	im/main.go:91	Server exit
+2025-07-27T16:12:40.444+0800	INFO	settings/load.go:38	邮箱加载完成
+2025-07-27T16:12:40.470+0800	INFO	settings/load.go:61	关系名单加载完成
+2025-07-27T16:12:40.472+0800	INFO	im/main.go:45	Server is started!
+2025-07-27T16:13:10.472+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-27T16:13:10.472+0800	INFO	im/main.go:91	Server exit

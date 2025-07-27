@@ -71,6 +71,24 @@ func init() {
 	fileTypeMap["2E7261FD"] = "ram"         // Real Audio [ram]
 }
 
+// 获取前面结果字节的二进制
+func bytesToHexString(src []byte) string {
+	res := bytes.Buffer{}
+	if src == nil || len(src) <= 0 {
+		return ""
+	}
+	temp := make([]byte, 0)
+	for _, v := range src {
+		sub := v & 0xFF                             // 0xFF 表示无符号整数，二进制为 1111 1111 占一个字节，和其进行 & 操作的数，会保留最低 8 位，即最低字节（最后一个字节）
+		hv := hex.EncodeToString(append(temp, sub)) // 将 temp 和 sub 拼接在一起，然后将字节切片转换为对应的十六进制字符串表示形式
+		if len(hv) < 2 {
+			res.WriteString(strconv.FormatInt(int64(0), 10)) // 如果转换后的字符串长度小于 2(即 sub 没有值)，表示只有一个字符，需要在前面补 0
+		}
+		res.WriteString(hv)
+	}
+	return res.String()
+}
+
 // GetFileType 获取文件类型
 // 文件前面几个字节来判断
 // fSrc：文件字节流（就用前面几个字节）
@@ -85,26 +103,6 @@ func GetFileType(file *multipart.FileHeader) (string, errcode.Err) {
 		return "", errcode.ErrServer
 	}
 	fileCode := bytesToHexString(fSrc)
-	return fileTypeMap[fileCode], nil
-}
 
-// 获取前面结果字节的二进制
-func bytesToHexString(src []byte) string {
-	res := bytes.Buffer{}
-	if src == nil || len(src) <= 0 {
-		return ""
-	}
-	temp := make([]byte, 0)
-	for _, v := range src {
-		// 0xFF 表示无符号整数，二进制为 1111 1111 占一个字节，和其进行 & 操作的数，会保留最低 8 位，即最低字节（最后一个字节）
-		sub := v & 0xFF
-		// 将 temp 和 sub 拼接在一起，然后将字节切片转换为对应的十六进制字符串表示形式
-		hv := hex.EncodeToString(append(temp, sub))
-		if len(hv) < 2 {
-			// 如果转换后的字符串长度小于 2(即 sub 没有值)，表示只有一个字符，需要在前面补 0
-			res.WriteString(strconv.FormatInt(int64(0), 10))
-		}
-		res.WriteString(hv)
-	}
-	return res.String()
+	return fileTypeMap[fileCode], nil
 }

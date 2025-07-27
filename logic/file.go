@@ -211,3 +211,50 @@ func (file) GetFileDetailByID(ctx *gin.Context, fileID int64) (*reply.ParamFile,
 		CreateAt:  result.CreateAt,
 	}, nil
 }
+
+// UploadGroupAvatar 上传群头像
+func (file) UploadGroupAvatar(ctx *gin.Context, file *multipart.FileHeader, accountID, relationID int64) (*reply.ParamUploadAvatar, errcode.Err) {
+	ok, err := dao.Database.DB.ExistsSetting(ctx, &db.ExistsSettingParams{
+		AccountID:  accountID,
+		RelationID: relationID,
+	})
+	if err != nil {
+		global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
+		return &reply.ParamUploadAvatar{URL: ""}, errcode.ErrServer
+	}
+	if !ok {
+		return &reply.ParamUploadAvatar{URL: ""}, errcodes.NotGroupMember
+	}
+	// 上传至华为云
+	//obs := initOBS(huawei_cloud.GroupAvatarType)
+	var url, key string
+	//input := new(obs2.PutObjectInput)
+	//if file != nil {
+	//	url, key, err = obs.UploadFile(file, input)
+	//	if err != nil {
+	//		global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
+	//		return &reply.ParamUploadAvatar{URL: ""}, errcode.ErrServer
+	//	}
+	//}
+
+	if file == nil {
+		url = global.PublicSetting.Rules.DefaultAvatarURL
+	}
+	err = dao.Database.DB.UploadGroupAvatarWithTx(ctx, db.CreateFileParams{
+		FileName:   "groupAvatar",
+		FileType:   "",
+		FileSize:   0,
+		Key:        key,
+		Url:        url,
+		RelationID: sql.NullInt64{Int64: relationID, Valid: true},
+		AccountID:  sql.NullInt64{},
+	})
+	if err != nil {
+		global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
+		return &reply.ParamUploadAvatar{URL: ""}, errcode.ErrServer
+	}
+	if file == nil {
+		return &reply.ParamUploadAvatar{URL: global.PublicSetting.Rules.DefaultAvatarURL}, nil
+	}
+	return &reply.ParamUploadAvatar{URL: url}, nil
+}

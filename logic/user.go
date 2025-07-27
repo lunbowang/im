@@ -9,6 +9,7 @@ import (
 	"im/middlewares"
 	"im/model"
 	"im/model/reply"
+	"im/task"
 
 	"github.com/XYYSWK/Lutils/pkg/app/errcode"
 	"github.com/XYYSWK/Lutils/pkg/password"
@@ -231,9 +232,9 @@ func (user) UpdateUserEmail(ctx *gin.Context, userID int64, emailStr, code strin
 		return errcode.ErrServer
 	}
 
-	//todo 给用户的每个账户推送更改邮箱通知
-	//accessToken,_:=middlewares.GetToken(ctx.Request.Header)
-	//global.Worker.SendTask(task.UpdateEmail(accessToken,userID,emailStr))
+	// 给用户的每个账户推送更改邮箱通知
+	accessToken, _ := middlewares.GetToken(ctx.Request.Header)
+	global.Worker.SendTask(task.UpdateEmail(accessToken, userID, emailStr))
 	return nil
 }
 

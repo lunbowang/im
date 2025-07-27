@@ -10,7 +10,9 @@ import (
 	"im/global"
 	"im/middlewares"
 	"im/model"
+	"im/model/chat/server"
 	"im/model/reply"
+	"im/task"
 	"strings"
 
 	"github.com/XYYSWK/Lutils/pkg/app/errcode"
@@ -42,8 +44,9 @@ func (setting) UpdateNickName(ctx *gin.Context, accountID, relationID int64, nic
 			global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
 			return errcode.ErrServer
 		}
-		// todo 向自己推送更改昵称的通知
-		//accessToken,_:=middlewares.GetToken(ctx.Request.Header)
+		// 向自己推送更改昵称的通知
+		accessToken, _ := middlewares.GetToken(ctx.Request.Header)
+		global.Worker.SendTask(task.UpdateNickName(accessToken, accountID, relationID, nickName))
 		return nil
 	default:
 		global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
@@ -72,7 +75,9 @@ func (setting) UpdateSettingPin(ctx *gin.Context, accountID, relationID int64, i
 			global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
 			return errcode.ErrServer
 		}
-		// todo 向自己推送更改指定通知
+		// 向自己推送更改指定通知
+		accessToken, _ := middlewares.GetToken(ctx.Request.Header)
+		global.Worker.SendTask(task.UpdateSettingState(accessToken, server.SettingPin, accountID, relationID, isPin))
 		return nil
 	default:
 		global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
@@ -102,7 +107,9 @@ func (setting) UpdateSettingDisturb(ctx *gin.Context, accountID, relationID int6
 			global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
 			return errcode.ErrServer
 		}
-		// todo 向自己更新免打扰的通知
+		// 向自己更新免打扰的通知
+		accessToken, _ := middlewares.GetToken(ctx.Request.Header)
+		global.Worker.SendTask(task.UpdateSettingState(accessToken, server.SettingNotDisturb, accountID, relationID, isNotDisturb))
 		return nil
 	default:
 		global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
@@ -132,7 +139,9 @@ func (setting) UpdateSettingShow(ctx *gin.Context, accountID, relationID int64, 
 			global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
 			return errcode.ErrServer
 		}
-		// todo 向自己推送更改展示状态的通知
+		// 向自己推送更改展示状态的通知
+		accountToken, _ := middlewares.GetToken(ctx.Request.Header)
+		global.Worker.SendTask(task.UpdateSettingState(accountToken, server.SettingShow, accountID, relationID, isShow))
 		return nil
 	default:
 		global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
@@ -311,7 +320,9 @@ func (setting) DeleteFriend(ctx *gin.Context, accountID, relationID int64) errco
 		return errcode.ErrServer
 	}
 
-	// todo 推送删除通知
+	// 推送删除通知
+	accessToken, _ := middlewares.GetToken(ctx.Request.Header)
+	global.Worker.SendTask(task.DeleteRelation(accessToken, accountID, relationID))
 	return nil
 }
 

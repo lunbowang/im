@@ -11,6 +11,7 @@ import (
 	"im/model"
 	"im/model/common"
 	"im/model/reply"
+	"im/task"
 
 	"github.com/jackc/pgx/v4"
 
@@ -163,9 +164,9 @@ func (account) UpdateAccount(ctx *gin.Context, accountID int64, name, gender, si
 	}
 
 	// 获取token
-	//accessToken,_:middlewares.GetToken(ctx.Request.Header)
-	// todo 推送更新消息
-	//global.Worker.SendTask(task.UpdateAccount(accessToken, accountID, name, gender, signature))
+	accessToken, _ := middlewares.GetToken(ctx.Request.Header)
+	// 推送更新消息
+	global.Worker.SendTask(task.UpdateAccount(accessToken, accountID, name, gender, signature))
 	return nil
 }
 

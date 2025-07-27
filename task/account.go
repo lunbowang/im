@@ -3,6 +3,10 @@ package task
 import (
 	"im/dao"
 	"im/global"
+	"im/model/chat"
+	"im/model/chat/server"
+
+	"github.com/XYYSWK/Lutils/pkg/utils"
 )
 
 /*
@@ -14,10 +18,26 @@ func UpdateEmail(accessToken string, userID int64, email string) func() {
 	return func() {
 		ctx, cancel := global.DefaultContextWithTimeout()
 		defer cancel()
-		_, err := dao.Database.DB.GetAcountIDsByUserID(ctx, userID)
+		accountIDs, err := dao.Database.DB.GetAcountIDsByUserID(ctx, userID)
 		if err != nil {
 			global.Logger.Error(err.Error())
 			return
 		}
+		global.ChatMap.SendMany(accountIDs, chat.ServerUpdateEmail, server.UpdateEmail{
+			EnToken: utils.EncodeMD5(accessToken),
+			Email:   email,
+		})
+	}
+}
+
+// UpdateAccount 更新账号信息时，通知该账号成功更新后的信息
+func UpdateAccount(accessToken string, accountID int64, name, gender, signature string) func() {
+	return func() {
+		global.ChatMap.Send(accountID, chat.ServerUpdateAccount, server.UpdateAccount{
+			EnToken:   utils.EncodeMD5(accessToken),
+			Name:      name,
+			Gender:    gender,
+			Signature: signature,
+		})
 	}
 }

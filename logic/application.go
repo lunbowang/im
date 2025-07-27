@@ -8,6 +8,7 @@ import (
 	"im/global"
 	"im/middlewares"
 	"im/model/reply"
+	"im/task"
 
 	"github.com/jackc/pgx/v4"
 
@@ -50,8 +51,8 @@ func (a application) CreateApplication(ctx *gin.Context, accountID1, accountID2 
 	case errors.Is(err, errcodes.ApplicationExists):
 		return errcodes.ApplicationExists
 	case errors.Is(err, nil):
-		// todo 提示对方有新的申请消息
-		//global.Worker.SendTask(task.A)
+		// 提示对方有新的申请消息
+		global.Worker.SendTask(task.Application(accountID2))
 		return nil
 	default:
 		global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
@@ -134,13 +135,24 @@ func (application) AcceptApplication(ctx *gin.Context, accountID1, accountID2 in
 		return myerr
 	}
 
-	_, err := dao.Database.DB.AcceptApplicationTx(ctx, dao.Database.Redis, accountInfo1, accountInfo2)
+	msgInfo, err := dao.Database.DB.AcceptApplicationTx(ctx, dao.Database.Redis, accountInfo1, accountInfo2)
 	if err != nil {
 		global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
 		return errcode.ErrServer
 	}
 
-	// todo 推送消息
+	// 推送消息
+	global.Worker.SendTask(task.PublishMsg(reply.ParamMsgInfoWithRly{
+		ParamMsgInfo: reply.ParamMsgInfo{
+			ID:         msgInfo.ID,
+			NotifyType: string(msgInfo.NotifyType),
+			MsgType:    msgInfo.MsgType,
+			MsgContent: msgInfo.MsgContent,
+			RelationID: msgInfo.RelationID,
+			CreateAt:   msgInfo.CreateAt,
+		},
+		RlyMsg: nil,
+	}))
 	return nil
 }
 

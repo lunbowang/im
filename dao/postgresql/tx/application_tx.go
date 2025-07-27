@@ -2,10 +2,14 @@ package tx
 
 import (
 	"context"
+	"database/sql"
 	db "im/dao/postgresql/sqlc"
 	"im/dao/redis/operate"
 	"im/errcodes"
+	"im/model"
 	"im/pkg/tool"
+
+	"github.com/jackc/pgtype"
 )
 
 // CreateApplicationTx 使用事务先判断是否存在申请，不存在则创建申请
@@ -75,13 +79,27 @@ func (store *SqlStore) AcceptApplicationTx(ctx context.Context, rdb *operate.RDB
 			})
 		})
 
-		// todo 新建一个系统通知消息作为好友的第一条消息
-		//err = tool.DoThat(err, func() error {
-		//	arg := &db.CreateMessageParams{
-		//		NotifyType: db.MsgnotifytypeCommon,
-		//		MsgType: string(model.M),
-		//	}
-		//})
+		// 新建一个系统通知消息作为好友的第一条消息
+		err = tool.DoThat(err, func() error {
+			arg := &db.CreateMessageParams{
+				NotifyType: db.MsgnotifytypeCommon,
+				MsgType:    string(model.MsgTypeText),
+				MsgContent: "我们已经成为好友啦，现在可以聊天拉！",
+				MsgExtend:  pgtype.JSON{Status: pgtype.Null},
+				AccountID:  sql.NullInt64{Int64: account2.ID, Valid: true},
+				RelationID: relationID,
+			}
+			msgInfo, err := queries.CreateMessage(ctx, arg)
+			result = &db.Message{
+				ID:         msgInfo.ID,
+				NotifyType: arg.NotifyType,
+				MsgType:    arg.MsgType,
+				MsgContent: arg.MsgContent,
+				RelationID: relationID,
+				CreateAt:   msgInfo.CreateAt,
+			}
+			return err
+		})
 
 		// 添加关系到 redis
 		err = tool.DoThat(err, func() error {

@@ -45,14 +45,15 @@ func (group) CreateGroup(ctx *gin.Context) {
 		rly.Reply(err)
 		return
 	}
-	// todo 上传群头像
+	// 上传群头像
+	result, err := logic.Logics.File.UploadGroupAvatar(ctx, nil, content.ID, relationID)
 
 	rly.Reply(err, reply.ParamCreateGroup{
 		Name:        params.Name,
 		AccountID:   content.ID,
 		RelationID:  relationID,
 		Description: params.Description,
-		Avatar:      "",
+		Avatar:      result.URL,
 	})
 }
 
@@ -160,9 +161,9 @@ func (group) UpdateGroup(ctx *gin.Context) {
 	if err != nil {
 		rly.Reply(err, result)
 	}
-	// todo 上传群头像
-	//avatar, err := logic.Logics.File.UploadGroupAvatar(ctx, params.Avatar, content.ID, params.RelationID)
-	//result.Avatar = avatar.URL
+	// 上传群头像
+	avatar, err := logic.Logics.File.UploadGroupAvatar(ctx, params.Avatar, content.ID, params.RelationID)
+	result.Avatar = avatar.URL
 	rly.Reply(err, result)
 }
 

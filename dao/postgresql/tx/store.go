@@ -25,6 +25,8 @@ type TXer interface {
 	DeleteRelationWithTx(ctx context.Context, rdb *operate.RDB, relationID int64) error
 	// AddSettingWithTx 向数据库和 redis 中同时添加群成员
 	AddSettingWithTx(ctx context.Context, rdb *operate.RDB, accountID, relationID int64, isLeader bool) error
+	// UploadGroupAvatarWithTx 创建群组头像文件
+	UploadGroupAvatarWithTx(ctx context.Context, arg db.CreateFileParams) error
 	// TransferGroupWithTx 转让群
 	TransferGroupWithTx(ctx context.Context, accountID, relationID, toAccountID int64) error
 	// DeleteSettingWithTx 从数据库和 redis 中删除群员

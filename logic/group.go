@@ -8,6 +8,7 @@ import (
 	"im/middlewares"
 	"im/model"
 	"im/model/reply"
+	"im/task"
 
 	"github.com/XYYSWK/Lutils/pkg/app/errcode"
 	"github.com/gin-gonic/gin"
@@ -84,9 +85,9 @@ func (group) InviteAccount(ctx *gin.Context, accountID, relationID int64, member
 		}
 	}
 
-	// todo 推送进群消息
-	//accessToken,_:=middlewares.GetToken(ctx.Request.Header)
-	//global.Worker.SendTask(task.InviteGroup(accessToken, accountID, relationID))
+	// 推送进群消息
+	accessToken, _ := middlewares.GetToken(ctx.Request.Header)
+	global.Worker.SendTask(task.InviteGroup(accessToken, accountID, relationID))
 
 	return &reply.ParamInviteAccount{
 		InviteMember: result,
@@ -133,8 +134,9 @@ func (group) TransferGroup(ctx *gin.Context, accountID, relationID, toAccountID 
 		global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
 		return errcode.ErrServer
 	}
-	// todo 推送群主变更通知
-
+	// 推送群主变更通知
+	accessToken, _ := middlewares.GetToken(ctx.Request.Header)
+	global.Worker.SendTask(task.TransferGroup(accessToken, accountID, relationID))
 	return nil
 }
 
@@ -156,7 +158,9 @@ func (group) DissolveGroup(ctx *gin.Context, accountID, relationID int64) errcod
 		global.Logger.Error(err.Error(), middlewares.ErrLogMsg(ctx)...)
 		return errcode.ErrServer
 	}
-	// todo 推送群解散的消息
+	// 推送群解散的消息
+	accessToken, _ := middlewares.GetToken(ctx.Request.Header)
+	global.Worker.SendTask(task.DissolveGroup(accessToken, relationID))
 
 	return nil
 }
@@ -259,8 +263,9 @@ func (group) QuitGroup(ctx *gin.Context, accountID, relationID int64) errcode.Er
 		return errcode.ErrServer
 	}
 
-	// todo 推送退群通知
-
+	// 推送退群通知
+	accessToken, _ := middlewares.GetToken(ctx.Request.Header)
+	global.Worker.SendTask(task.QuitGroup(accessToken, accountID, relationID))
 	return nil
 }
 

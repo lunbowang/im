@@ -31,6 +31,8 @@ type TXer interface {
 	TransferGroupWithTx(ctx context.Context, accountID, relationID, toAccountID int64) error
 	// DeleteSettingWithTx 从数据库和 redis 中删除群员
 	DeleteSettingWithTx(ctx context.Context, rdb *operate.RDB, accountID, relationID int64) error
+	// RevokeMsgWithTx 撤回消息，如果消息 pin 或者置顶，则全部取消
+	RevokeMsgWithTx(ctx context.Context, msgID int64, isPin, isTop bool) error
 }
 
 // SqlStore 用于处理数据类型

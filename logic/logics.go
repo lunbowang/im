@@ -9,6 +9,7 @@ type logics struct {
 	Setting     setting
 	File        file
 	Notify      notify
+	Message     message
 }
 
 var Logics = new(logics)

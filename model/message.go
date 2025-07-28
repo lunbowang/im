@@ -1,6 +1,11 @@
 package model
 
-import "github.com/jackc/pgtype"
+import (
+	"mime/multipart"
+	"time"
+
+	"github.com/jackc/pgtype"
+)
 
 type MsgType string
 
@@ -8,6 +13,13 @@ const (
 	MsgTypeText MsgType = "text"
 	MsgTypeFile MsgType = "file"
 )
+
+type CreateFileMsg struct {
+	AccountID  int64
+	RelationID int64
+	RlyMsgID   int64
+	File       *multipart.FileHeader
+}
 
 type Remind struct {
 	Idx       int64 `json:"idx,omitempty" binding:"required,gte=1" validate:"required,gte=1"`        // 第几个 @
@@ -37,4 +49,19 @@ func ExtendToJson(extend *MsgExtend) (pgtype.JSON, error) {
 	data := pgtype.JSON{}
 	err := data.Set(extend)
 	return data, err
+}
+
+type GetMsgsByRelationIDAndTime struct {
+	AccountID  int64
+	RelationID int64
+	LastTime   time.Time
+	Limit      int32
+	Offset     int32
+}
+
+type OfferMsgsByAccountIDAndTime struct {
+	AccountID int64
+	LastTime  time.Time
+	Limit     int32
+	Offset    int32
 }

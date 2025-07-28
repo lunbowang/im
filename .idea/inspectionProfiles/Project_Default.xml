@@ -1,6 +1,14 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
+    <inspection_tool class="GoDfaErrorMayBeNotNil" enabled="true" level="WARNING" enabled_by_default="true">
+      <methods>
+        <method importPath="im/logic" receiver="file" name="UploadGroupAvatar" />
+        <method importPath="im/logic" receiver="message" name="GetPinMsgsByRelationID" />
+        <method importPath="im/logic" receiver="message" name="GetRlyMsgsInfoByMsgID" />
+        <method importPath="im/logic" receiver="message" name="GetMsgsByContent" />
+      </methods>
+    </inspection_tool>
     <inspection_tool class="GoDfaNilDereference" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="GoMixedReceiverTypes" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
   </profile>

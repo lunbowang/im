@@ -12,6 +12,7 @@ type apis struct {
 	Chat        chat.Group
 	File        file
 	Notify      notify
+	Message     message
 }
 
 var Apis = new(apis)

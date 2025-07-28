@@ -10,6 +10,7 @@ type routers struct {
 	Chat        ws
 	File        file
 	Notify      notify
+	Message     message
 }
 
 var Routers = new(routers)

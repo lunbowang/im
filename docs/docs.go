@@ -1176,6 +1176,602 @@ const docTemplate = `{
                 }
             }
         },
+        "/api/message/file": {
+            "post": {
+                "security": [
+                    {
+                        "BasicAuth": []
+                    }
+                ],
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "message"
+                ],
+                "summary": "发布文件类型的消息",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Bearer 账户令牌",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "file",
+                        "description": "文件",
+                        "name": "file",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "关系id",
+                        "name": "relation_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "回复消息id",
+                        "name": "rly_msg_id",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/common.State"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/definitions/reply.ParamCreateFileMsg"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/api/message/info/top": {
+            "get": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "message"
+                ],
+                "summary": "获取指定关系中的置顶消息，如果不存在则为 null",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Bearer 账户令牌",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "minimum": 1,
+                        "type": "integer",
+                        "name": "relation_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "完整的消息详情,但不存在则为null",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/common.State"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/definitions/reply.ParamGetTopMsgByRelationID"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/api/message/list/content": {
+            "get": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "message"
+                ],
+                "summary": "通过内容模糊查找指定或所有关系中的消息，按照时间先后顺序倒序排序，不会查询撤回的消息（指定关系 ID \u003c 0 则查询所有关系中的消息）",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Bearer 账户令牌",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "name": "content",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "第几页",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "每页的大小",
+                        "name": "page_size",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "relation_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "完整的消息详情，包含回复消息",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/common.State"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/definitions/reply.ParamGetMsgsByContent"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/api/message/list/offer": {
+            "get": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "message"
+                ],
+                "summary": "获取所有关系指定时间戳之后的信息，获取的消息按照发布时间先后排序，同时包含是否已读的标识",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Bearer 账户令牌",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "minimum": 1,
+                        "type": "integer",
+                        "description": "拉取消息的最晚时间戳（精确到秒）",
+                        "name": "last_time",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "第几页",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "每页的大小",
+                        "name": "page_size",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "完整的消息详情，包含回复消息",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/common.State"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/definitions/reply.ParamOfferMsgsByAccountIDAndTime"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/api/message/list/pin": {
+            "get": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "message"
+                ],
+                "summary": "获取指定关系的 pin 消息，按照pin时间倒序排序",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Bearer 账户令牌",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "第几页",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "每页的大小",
+                        "name": "page_size",
+                        "in": "query"
+                    },
+                    {
+                        "minimum": 1,
+                        "type": "integer",
+                        "name": "relation_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "完整的消息详情，包含回复消息",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/common.State"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/definitions/reply.ParamGetPinMsgsByRelationID"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/api/message/list/reply": {
+            "get": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "message"
+                ],
+                "summary": "获取指定消息的所有回复消息，按照回复时间先后排序",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Bearer 账户令牌",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "minimum": 1,
+                        "type": "integer",
+                        "name": "msg_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "第几页",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "每页的大小",
+                        "name": "page_size",
+                        "in": "query"
+                    },
+                    {
+                        "minimum": 1,
+                        "type": "integer",
+                        "name": "relation_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "完整的消息详情，包含回复消息",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/common.State"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/definitions/reply.ParamGetRlyMsgsInfoByMsgID"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/api/message/list/time": {
+            "get": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "message"
+                ],
+                "summary": "获取指定关系指定时间戳之前的信息，获取的消息按照发布时间先后排序",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Bearer 账户令牌",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "minimum": 1,
+                        "type": "integer",
+                        "description": "拉取消息最晚的时间戳（精确到秒）",
+                        "name": "last_time",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "第几页",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "每页的大小",
+                        "name": "page_size",
+                        "in": "query"
+                    },
+                    {
+                        "minimum": 1,
+                        "type": "integer",
+                        "description": "关系 ID",
+                        "name": "relation_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "完整的消息详情，包含回复消息",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/common.State"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/definitions/reply.ParamGetMsgsRelationIDAndTime"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/api/message/update/pin": {
+            "put": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "message"
+                ],
+                "summary": "更改消息的 pin 状态",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Bearer 账户令牌",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "minimum": 1,
+                        "type": "integer",
+                        "description": "消息 ID",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "是否 pin",
+                        "name": "is_pin",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "minimum": 1,
+                        "type": "integer",
+                        "description": "关系 ID",
+                        "name": "relation_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "1001:参数有误 1003:系统错误 2007:身份不存在 2008:身份验证失败 2009:权限不足 2010:账号不存在 5001:消息不存在",
+                        "schema": {
+                            "$ref": "#/definitions/common.State"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/message/update/revoke": {
+            "put": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "message"
+                ],
+                "summary": "撤回消息",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Bearer 账户令牌",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "minimum": 1,
+                        "type": "integer",
+                        "description": "消息 ID",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "1001:参数有误 1003:系统错误 2007:身份不存在 2008:身份验证失败 2009:权限不足 2010:账号不存在 5001:消息不存在",
+                        "schema": {
+                            "$ref": "#/definitions/common.State"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/message/update/top": {
+            "put": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "message"
+                ],
+                "summary": "更改消息的置顶状态",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Bearer 账户令牌",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "minimum": 1,
+                        "type": "integer",
+                        "description": "消息 ID",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "是否置顶",
+                        "name": "is_top",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "minimum": 1,
+                        "type": "integer",
+                        "description": "关系 ID",
+                        "name": "relation_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "1001:参数有误 1003:系统错误 2007:身份不存在 2008:身份验证失败 2009:权限不足 2010:账号不存在 5001:消息不存在",
+                        "schema": {
+                            "$ref": "#/definitions/common.State"
+                        }
+                    }
+                }
+            }
+        },
         "/api/notify/create": {
             "post": {
                 "consumes": [
@@ -2308,6 +2904,72 @@ const docTemplate = `{
                 }
             }
         },
+        "reply.ParamBriefMsgInfo": {
+            "type": "object",
+            "properties": {
+                "account_id": {
+                    "description": "账号ID 发送者ID",
+                    "type": "integer"
+                },
+                "create_at": {
+                    "description": "创建时间",
+                    "type": "string"
+                },
+                "file_id": {
+                    "description": "文件ID 当消息类型为file时\u003e0",
+                    "type": "integer"
+                },
+                "id": {
+                    "description": "消息ID",
+                    "type": "integer"
+                },
+                "msg_content": {
+                    "description": "消息内容 文件则为url，文本则为文本内容，由拓展信息进行补充",
+                    "type": "string"
+                },
+                "msg_extend": {
+                    "description": "消息扩展信息 可能为null",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/model.MsgExtend"
+                        }
+                    ]
+                },
+                "msg_type": {
+                    "description": "消息类型 [text,file]",
+                    "type": "string"
+                },
+                "notify_type": {
+                    "description": "通知类型 [system,common]",
+                    "type": "string"
+                },
+                "relation_id": {
+                    "description": "关系ID",
+                    "type": "integer"
+                }
+            }
+        },
+        "reply.ParamCreateFileMsg": {
+            "type": "object",
+            "properties": {
+                "create_at": {
+                    "description": "创建时间",
+                    "type": "string"
+                },
+                "file_id": {
+                    "description": "文件 ID",
+                    "type": "integer"
+                },
+                "id": {
+                    "description": "消息 ID",
+                    "type": "integer"
+                },
+                "msg_content": {
+                    "description": "消息内容，文件则为 url",
+                    "type": "string"
+                }
+            }
+        },
         "reply.ParamCreateGroup": {
             "type": "object",
             "properties": {
@@ -2527,6 +3189,34 @@ const docTemplate = `{
                 }
             }
         },
+        "reply.ParamGetMsgsByContent": {
+            "type": "object",
+            "properties": {
+                "list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/reply.ParamBriefMsgInfo"
+                    }
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
+        "reply.ParamGetMsgsRelationIDAndTime": {
+            "type": "object",
+            "properties": {
+                "list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/reply.ParamMsgInfoWithRly"
+                    }
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
         "reply.ParamGetNotifyByID": {
             "type": "object",
             "properties": {
@@ -2534,6 +3224,20 @@ const docTemplate = `{
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/reply.ParamGroupNotify"
+                    }
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
+        "reply.ParamGetPinMsgsByRelationID": {
+            "type": "object",
+            "properties": {
+                "list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/reply.ParamMsgInfo"
                     }
                 },
                 "total": {
@@ -2566,6 +3270,20 @@ const docTemplate = `{
                 }
             }
         },
+        "reply.ParamGetRlyMsgsInfoByMsgID": {
+            "type": "object",
+            "properties": {
+                "list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/reply.ParamMsgInfo"
+                    }
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
         "reply.ParamGetShows": {
             "type": "object",
             "properties": {
@@ -2577,6 +3295,19 @@ const docTemplate = `{
                 },
                 "total": {
                     "type": "integer"
+                }
+            }
+        },
+        "reply.ParamGetTopMsgByRelationID": {
+            "type": "object",
+            "properties": {
+                "msg_info": {
+                    "description": "置顶消息详情",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/reply.ParamMsgInfo"
+                        }
+                    ]
                 }
             }
         },
@@ -2654,6 +3385,256 @@ const docTemplate = `{
                 }
             }
         },
+        "reply.ParamMsgInfo": {
+            "type": "object",
+            "properties": {
+                "account_id": {
+                    "description": "账号 ID，发送者的 ID",
+                    "type": "integer"
+                },
+                "create_at": {
+                    "description": "创建时间",
+                    "type": "string"
+                },
+                "file_id": {
+                    "description": "文件 ID，当消息类型为 file 时 \u003e 0",
+                    "type": "integer"
+                },
+                "id": {
+                    "description": "消息 ID",
+                    "type": "integer"
+                },
+                "is_pin": {
+                    "description": "是否 pin",
+                    "type": "boolean"
+                },
+                "is_revoke": {
+                    "description": "是否撤回",
+                    "type": "boolean"
+                },
+                "is_top": {
+                    "description": "是否置顶",
+                    "type": "boolean"
+                },
+                "msg_content": {
+                    "description": "消息内容 文件则为 url，文本则为文本内容，由拓展信息进行补充",
+                    "type": "string"
+                },
+                "msg_extend": {
+                    "description": "消息扩展信息，可能为 null",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/model.MsgExtend"
+                        }
+                    ]
+                },
+                "msg_type": {
+                    "description": "消息类型 [text, file]",
+                    "type": "string"
+                },
+                "notify_type": {
+                    "description": "通知类型 [system,common]",
+                    "type": "string"
+                },
+                "pin_time": {
+                    "description": "pin 时间",
+                    "type": "string"
+                },
+                "read_ids": {
+                    "description": "已读的账号ID，当请求者为发送者时为空",
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "relation_id": {
+                    "description": "关系 ID",
+                    "type": "integer"
+                },
+                "reply_count": {
+                    "description": "回复数",
+                    "type": "integer"
+                }
+            }
+        },
+        "reply.ParamMsgInfoWithRly": {
+            "type": "object",
+            "properties": {
+                "account_id": {
+                    "description": "账号 ID，发送者的 ID",
+                    "type": "integer"
+                },
+                "create_at": {
+                    "description": "创建时间",
+                    "type": "string"
+                },
+                "file_id": {
+                    "description": "文件 ID，当消息类型为 file 时 \u003e 0",
+                    "type": "integer"
+                },
+                "id": {
+                    "description": "消息 ID",
+                    "type": "integer"
+                },
+                "is_pin": {
+                    "description": "是否 pin",
+                    "type": "boolean"
+                },
+                "is_revoke": {
+                    "description": "是否撤回",
+                    "type": "boolean"
+                },
+                "is_top": {
+                    "description": "是否置顶",
+                    "type": "boolean"
+                },
+                "msg_content": {
+                    "description": "消息内容 文件则为 url，文本则为文本内容，由拓展信息进行补充",
+                    "type": "string"
+                },
+                "msg_extend": {
+                    "description": "消息扩展信息，可能为 null",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/model.MsgExtend"
+                        }
+                    ]
+                },
+                "msg_type": {
+                    "description": "消息类型 [text, file]",
+                    "type": "string"
+                },
+                "notify_type": {
+                    "description": "通知类型 [system,common]",
+                    "type": "string"
+                },
+                "pin_time": {
+                    "description": "pin 时间",
+                    "type": "string"
+                },
+                "read_ids": {
+                    "description": "已读的账号ID，当请求者为发送者时为空",
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "relation_id": {
+                    "description": "关系 ID",
+                    "type": "integer"
+                },
+                "reply_count": {
+                    "description": "回复数",
+                    "type": "integer"
+                },
+                "rly_msg": {
+                    "description": "回复消息详情，可能为 nil",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/reply.ParamRlyMsg"
+                        }
+                    ]
+                }
+            }
+        },
+        "reply.ParamMsgInfoWithRlyAndHasRead": {
+            "type": "object",
+            "properties": {
+                "account_id": {
+                    "description": "账号 ID，发送者的 ID",
+                    "type": "integer"
+                },
+                "create_at": {
+                    "description": "创建时间",
+                    "type": "string"
+                },
+                "file_id": {
+                    "description": "文件 ID，当消息类型为 file 时 \u003e 0",
+                    "type": "integer"
+                },
+                "has_read": {
+                    "description": "是否已读",
+                    "type": "boolean"
+                },
+                "id": {
+                    "description": "消息 ID",
+                    "type": "integer"
+                },
+                "is_pin": {
+                    "description": "是否 pin",
+                    "type": "boolean"
+                },
+                "is_revoke": {
+                    "description": "是否撤回",
+                    "type": "boolean"
+                },
+                "is_top": {
+                    "description": "是否置顶",
+                    "type": "boolean"
+                },
+                "msg_content": {
+                    "description": "消息内容 文件则为 url，文本则为文本内容，由拓展信息进行补充",
+                    "type": "string"
+                },
+                "msg_extend": {
+                    "description": "消息扩展信息，可能为 null",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/model.MsgExtend"
+                        }
+                    ]
+                },
+                "msg_type": {
+                    "description": "消息类型 [text, file]",
+                    "type": "string"
+                },
+                "notify_type": {
+                    "description": "通知类型 [system,common]",
+                    "type": "string"
+                },
+                "pin_time": {
+                    "description": "pin 时间",
+                    "type": "string"
+                },
+                "read_ids": {
+                    "description": "已读的账号ID，当请求者为发送者时为空",
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "relation_id": {
+                    "description": "关系 ID",
+                    "type": "integer"
+                },
+                "reply_count": {
+                    "description": "回复数",
+                    "type": "integer"
+                },
+                "rly_msg": {
+                    "description": "回复消息详情，可能为 nil",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/reply.ParamRlyMsg"
+                        }
+                    ]
+                }
+            }
+        },
+        "reply.ParamOfferMsgsByAccountIDAndTime": {
+            "type": "object",
+            "properties": {
+                "list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/reply.ParamMsgInfoWithRlyAndHasRead"
+                    }
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
         "reply.ParamPublishFile": {
             "type": "object",
             "properties": {
@@ -2670,6 +3651,35 @@ const docTemplate = `{
                     "type": "integer"
                 },
                 "url": {
+                    "type": "string"
+                }
+            }
+        },
+        "reply.ParamRlyMsg": {
+            "type": "object",
+            "properties": {
+                "is_revoked": {
+                    "description": "是否撤回",
+                    "type": "boolean"
+                },
+                "msg_content": {
+                    "description": "消息内容",
+                    "type": "string"
+                },
+                "msg_extend": {
+                    "description": "消息扩展信息(被@的信息)，可能为 null",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/model.MsgExtend"
+                        }
+                    ]
+                },
+                "msg_id": {
+                    "description": "回复消息 ID",
+                    "type": "integer"
+                },
+                "msg_type": {
+                    "description": "消息类型[text,file]",
                     "type": "string"
                 }
             }

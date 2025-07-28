@@ -143,6 +143,11 @@ create table messages
 -- 创建时间索引
 create index msg_create_at on messages (create_at);
 -- 分词索引(基于 GIN（Generalized Inverted Index）的全文搜索索引)
+CREATE TEXT SEARCH CONFIGURATION chinese (PARSER = default);
+ALTER TEXT SEARCH CONFIGURATION chinese
+    ALTER MAPPING FOR word, hword, hword_part
+        WITH simple;
+-- CREATE INDEX message_msg_content_tsv ON messages USING gin (to_tsvector('simple', msg_content));
 create index message_msg_content_tsv on messages using gin (to_tsvector('chinese',msg_content));
 
 -- --

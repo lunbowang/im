@@ -5,6 +5,7 @@ import (
 	"im/global"
 	"im/model/chat/client"
 	"im/model/common"
+	"im/pkg/rocketmq/consumer"
 	"im/task"
 	"log"
 	"time"
@@ -85,6 +86,7 @@ func (handle) Auth(s socketio.Conn, accessToken string) string {
 	global.ChatMap.Link(s, token.Content.ID)
 	global.Worker.SendTask(task.AccountLogin(accessToken, s.RemoteAddr().String(), token.Content.ID))
 	log.Println("auth accept:", s.RemoteAddr().String())
-	// todo 从mq中，读出离线消息
+	// 从mq中，读出离线消息
+	go consumer.StartConsumer(token.Content.ID)
 	return common.NewState(nil).MustJson()
 }

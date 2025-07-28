@@ -932,3 +932,214 @@
 2025-07-27T17:38:20.141+0800	INFO	middlewares/logger.go:79	/api/notify/delete	{"status": 200, "method": "DELETE", "path": "/api/notify/delete", "query": "relation_id=8&id=2", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0115885}
 2025-07-27T17:38:42.979+0800	INFO	im/main.go:80	Shutdown Server ...
 2025-07-27T17:38:42.980+0800	INFO	im/main.go:91	Server exit
+2025-07-28T09:43:50.811+0800	INFO	settings/load.go:38	邮箱加载完成
+2025-07-28T09:43:50.822+0800	INFO	settings/load.go:61	关系名单加载完成
+2025-07-28T09:43:50.833+0800	INFO	im/main.go:45	Server is started!
+2025-07-28T09:43:53.868+0800	INFO	middlewares/logger.go:79	/api/message/file	{"status": 200, "method": "POST", "path": "/api/message/file", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0013484}
+2025-07-28T09:44:00.107+0800	INFO	middlewares/logger.go:79	/api/message/file	{"status": 200, "method": "POST", "path": "/api/message/file", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005061}
+2025-07-28T09:44:08.011+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0151938}
+2025-07-28T09:44:21.451+0800	INFO	middlewares/logger.go:79	/api/message/file	{"status": 200, "method": "POST", "path": "/api/message/file", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.8115327}
+2025-07-28T09:54:10.804+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-28T09:54:10.806+0800	INFO	im/main.go:91	Server exit
+2025-07-28T11:46:07.836+0800	INFO	settings/load.go:38	邮箱加载完成
+2025-07-28T11:46:07.848+0800	INFO	settings/load.go:61	关系名单加载完成
+2025-07-28T11:46:07.850+0800	INFO	im/main.go:45	Server is started!
+2025-07-28T11:46:10.449+0800	INFO	middlewares/logger.go:79	/api/message/file	{"status": 200, "method": "POST", "path": "/api/message/file", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.2156226}
+2025-07-28T14:53:03.491+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-28T14:53:03.501+0800	INFO	im/main.go:91	Server exit
+2025-07-28T15:25:18.608+0800	INFO	settings/load.go:38	邮箱加载完成
+2025-07-28T15:25:18.921+0800	INFO	settings/load.go:61	关系名单加载完成
+2025-07-28T15:25:18.932+0800	INFO	im/main.go:45	Server is started!
+2025-07-28T15:25:31.860+0800	INFO	middlewares/logger.go:79	/api/message/file	{"status": 200, "method": "POST", "path": "/api/message/file", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 2.7436456}
+2025-07-28T15:40:24.360+0800	INFO	middlewares/logger.go:79	/api/message/file	{"status": 200, "method": "POST", "path": "/api/message/file", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0133539}
+2025-07-28T15:47:37.817+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=4&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 0.0093903}
+2025-07-28T15:47:47.816+0800	INFO	chat/handle.go:28	auth failed: 127.0.0.1:52358 1
+
+2025-07-28T15:48:33.064+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=4&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 0.0014035}
+2025-07-28T15:48:43.063+0800	INFO	chat/handle.go:28	auth failed: 127.0.0.1:52372 2
+
+2025-07-28T15:49:59.203+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=4&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 0.0010512}
+2025-07-28T15:50:09.202+0800	INFO	chat/handle.go:28	auth failed: 127.0.0.1:52404 3
+
+2025-07-28T15:51:42.438+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-28T15:51:42.439+0800	INFO	im/main.go:91	Server exit
+2025-07-28T15:52:54.386+0800	INFO	settings/load.go:38	邮箱加载完成
+2025-07-28T15:52:54.395+0800	INFO	settings/load.go:61	关系名单加载完成
+2025-07-28T15:52:54.398+0800	INFO	im/main.go:45	Server is started!
+2025-07-28T15:52:58.037+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=4&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 0.0043014}
+2025-07-28T15:53:08.035+0800	INFO	chat/handle.go:28	auth failed: 127.0.0.1:52456 1
+
+2025-07-28T15:53:19.666+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=4&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 0.0018101}
+2025-07-28T15:53:29.666+0800	INFO	chat/handle.go:28	auth failed: 127.0.0.1:52467 2
+
+2025-07-28T15:53:30.832+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=4&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 0.0016968}
+2025-07-28T15:53:40.832+0800	INFO	chat/handle.go:28	auth failed: 127.0.0.1:52470 3
+
+2025-07-28T15:56:17.208+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=4&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 0.001844}
+2025-07-28T15:56:27.208+0800	INFO	chat/handle.go:28	auth failed: 127.0.0.1:52524 4
+
+2025-07-28T15:57:25.565+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=4&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 0.001518}
+2025-07-28T15:57:35.565+0800	INFO	chat/handle.go:28	auth failed: 127.0.0.1:52548 5
+
+2025-07-28T15:59:25.559+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=4&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 0.0019864}
+2025-07-28T15:59:35.557+0800	INFO	chat/handle.go:28	auth failed: 127.0.0.1:52564 6
+
+2025-07-28T16:01:30.991+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=4&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 0.0041863}
+2025-07-28T16:01:40.988+0800	INFO	chat/handle.go:28	auth failed: 127.0.0.1:52614 7
+
+2025-07-28T16:04:52.546+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-28T16:04:52.546+0800	INFO	im/main.go:91	Server exit
+2025-07-28T16:06:49.814+0800	INFO	settings/load.go:38	邮箱加载完成
+2025-07-28T16:06:49.824+0800	INFO	settings/load.go:61	关系名单加载完成
+2025-07-28T16:06:49.827+0800	INFO	im/main.go:45	Server is started!
+2025-07-28T16:06:56.023+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=4&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 0.0019401}
+2025-07-28T16:07:06.022+0800	INFO	chat/handle.go:28	auth failed: 127.0.0.1:52670 1
+
+2025-07-28T16:10:28.833+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-28T16:10:28.834+0800	INFO	im/main.go:91	Server exit
+2025-07-28T16:10:30.249+0800	INFO	settings/load.go:38	邮箱加载完成
+2025-07-28T16:10:30.258+0800	INFO	settings/load.go:61	关系名单加载完成
+2025-07-28T16:10:30.260+0800	INFO	im/main.go:45	Server is started!
+2025-07-28T16:10:42.535+0800	INFO	chat/handle.go:28	auth failed: 127.0.0.1:52714 1
+
+2025-07-28T16:10:42.536+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=3&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 10.001085}
+2025-07-28T16:11:42.632+0800	INFO	chat/handle.go:28	auth failed: 127.0.0.1:52733 2
+
+2025-07-28T16:11:42.634+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=3&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 10.0031207}
+2025-07-28T16:14:47.377+0800	INFO	chat/handle.go:28	auth failed: 127.0.0.1:52776 3
+
+2025-07-28T16:14:47.377+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=3&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 10.0000416}
+2025-07-28T16:15:41.031+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.005018}
+2025-07-28T16:22:56.442+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=4&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 0.0005292}
+2025-07-28T16:23:06.441+0800	INFO	chat/handle.go:28	auth failed: 127.0.0.1:52921 5
+
+2025-07-28T16:23:39.875+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0014763}
+2025-07-28T16:25:33.618+0800	INFO	chat/handle.go:28	auth failed: 127.0.0.1:52954 6
+
+2025-07-28T16:25:33.619+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=3&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 10.0013912}
+2025-07-28T16:25:36.638+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=3&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 576.8882161}
+2025-07-28T16:25:48.374+0800	INFO	chat/handle.go:28	auth failed: 127.0.0.1:52957 7
+
+2025-07-28T16:25:48.375+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=3&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 10.0017211}
+2025-07-28T16:25:55.665+0800	INFO	chat/handle.go:28	auth failed: 127.0.0.1:52961 8
+
+2025-07-28T16:25:55.666+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=3&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 10.0015222}
+2025-07-28T16:26:06.031+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005067}
+2025-07-28T16:26:36.499+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0006597}
+2025-07-28T16:27:51.081+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=3&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 16.4714693}
+2025-07-28T16:59:33.212+0800	INFO	middlewares/logger.go:79	/api/group/invite	{"status": 200, "method": "POST", "path": "/api/group/invite", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0079609}
+2025-07-28T17:00:02.004+0800	INFO	middlewares/logger.go:79	/api/group/invite	{"status": 200, "method": "POST", "path": "/api/group/invite", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0010588}
+2025-07-28T17:00:54.805+0800	INFO	middlewares/logger.go:79	/api/group/invite	{"status": 200, "method": "POST", "path": "/api/group/invite", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0083115}
+2025-07-28T17:14:26.243+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-28T17:14:26.244+0800	INFO	im/main.go:91	Server exit
+2025-07-28T17:14:34.398+0800	INFO	settings/load.go:38	邮箱加载完成
+2025-07-28T17:14:34.405+0800	INFO	settings/load.go:61	关系名单加载完成
+2025-07-28T17:14:34.407+0800	INFO	im/main.go:45	Server is started!
+2025-07-28T17:14:56.202+0800	INFO	chat/handle.go:28	auth failed: 127.0.0.1:54315 1
+
+2025-07-28T17:14:56.204+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=3&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 10.0033456}
+2025-07-28T17:15:45.169+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0027508}
+2025-07-28T17:17:45.762+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005093}
+2025-07-28T17:21:45.996+0800	INFO	middlewares/logger.go:79	/api/message/update/pin	{"status": 200, "method": "PUT", "path": "/api/message/update/pin", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-28T17:21:52.423+0800	INFO	middlewares/logger.go:79	/api/message/update/pin	{"status": 200, "method": "PUT", "path": "/api/message/update/pin", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0130355}
+2025-07-28T17:23:17.841+0800	INFO	middlewares/logger.go:79	/api/message/update/pin	{"status": 200, "method": "PUT", "path": "/api/message/update/pin", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0071264}
+2025-07-28T18:44:43.443+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=3&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 5195.9452404}
+2025-07-28T18:44:43.458+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=3&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 5367.7121016}
+2025-07-28T18:44:43.753+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=3&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 5326.6936092}
+2025-07-28T19:05:42.841+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-28T19:05:42.842+0800	INFO	im/main.go:91	Server exit
+2025-07-28T19:05:50.703+0800	INFO	settings/load.go:38	邮箱加载完成
+2025-07-28T19:05:50.712+0800	INFO	settings/load.go:61	关系名单加载完成
+2025-07-28T19:05:50.715+0800	INFO	im/main.go:45	Server is started!
+2025-07-28T19:06:31.870+0800	INFO	middlewares/logger.go:79	/api/message/update/top	{"status": 200, "method": "PUT", "path": "/api/message/update/top", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-28T19:06:55.972+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0035688}
+2025-07-28T19:07:32.201+0800	INFO	middlewares/logger.go:79	/api/account/token	{"status": 200, "method": "GET", "path": "/api/account/token", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0011036}
+2025-07-28T19:09:27.519+0800	INFO	middlewares/logger.go:79	/api/message/update/top	{"status": 200, "method": "PUT", "path": "/api/message/update/top", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0100028}
+2025-07-28T19:10:35.442+0800	INFO	middlewares/logger.go:79	/api/message/update/top	{"status": 200, "method": "PUT", "path": "/api/message/update/top", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0092579}
+2025-07-28T19:10:58.135+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-28T19:10:58.137+0800	INFO	im/main.go:91	Server exit
+2025-07-28T20:20:23.581+0800	INFO	settings/load.go:38	邮箱加载完成
+2025-07-28T20:20:23.590+0800	INFO	settings/load.go:61	关系名单加载完成
+2025-07-28T20:20:23.592+0800	INFO	im/main.go:45	Server is started!
+2025-07-28T20:21:31.172+0800	INFO	middlewares/logger.go:79	/api/message/update/top	{"status": 200, "method": "PUT", "path": "/api/message/update/top", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-28T20:21:38.014+0800	INFO	middlewares/logger.go:79	/api/message/update/top	{"status": 200, "method": "PUT", "path": "/api/message/update/top", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005051}
+2025-07-28T20:22:03.925+0800	INFO	middlewares/logger.go:79	/api/message/update/revoke	{"status": 200, "method": "PUT", "path": "/api/message/update/revoke", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0109162}
+2025-07-28T20:24:09.818+0800	INFO	middlewares/logger.go:79	/socket.io/	{"status": 200, "method": "GET", "path": "/socket.io/", "query": "EIO=3&transport=websocket", "ip": "127.0.0.1", "user-agent": "", "error": "", "cost": 216.5603411}
+2025-07-28T20:24:24.493+0800	INFO	middlewares/logger.go:79	/api/message/update/revoke	{"status": 200, "method": "PUT", "path": "/api/message/update/revoke", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0069879}
+2025-07-28T20:31:15.586+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-28T20:31:15.588+0800	INFO	im/main.go:91	Server exit
+2025-07-28T20:31:17.527+0800	INFO	settings/load.go:38	邮箱加载完成
+2025-07-28T20:31:17.535+0800	INFO	settings/load.go:61	关系名单加载完成
+2025-07-28T20:31:17.537+0800	INFO	im/main.go:45	Server is started!
+2025-07-28T20:34:14.465+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-28T20:34:14.466+0800	INFO	im/main.go:91	Server exit
+2025-07-28T20:34:20.853+0800	INFO	settings/load.go:38	邮箱加载完成
+2025-07-28T20:34:20.863+0800	INFO	settings/load.go:61	关系名单加载完成
+2025-07-28T20:34:20.864+0800	INFO	im/main.go:45	Server is started!
+2025-07-28T20:50:35.970+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-28T20:50:35.971+0800	INFO	im/main.go:91	Server exit
+2025-07-28T20:50:45.666+0800	INFO	settings/load.go:38	邮箱加载完成
+2025-07-28T20:50:45.676+0800	INFO	settings/load.go:61	关系名单加载完成
+2025-07-28T20:50:45.678+0800	INFO	im/main.go:45	Server is started!
+2025-07-28T21:00:54.324+0800	INFO	middlewares/logger.go:79	/api/message/update/top	{"status": 404, "method": "GET", "path": "/api/message/update/top", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-28T21:01:06.140+0800	INFO	middlewares/logger.go:79	/api/message/info/top	{"status": 200, "method": "GET", "path": "/api/message/info/top", "query": "", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0152589}
+2025-07-28T21:01:20.587+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-28T21:01:20.588+0800	INFO	im/main.go:91	Server exit
+2025-07-28T21:21:06.301+0800	INFO	settings/load.go:38	邮箱加载完成
+2025-07-28T21:21:06.310+0800	INFO	settings/load.go:61	关系名单加载完成
+2025-07-28T21:21:06.311+0800	INFO	im/main.go:45	Server is started!
+2025-07-28T21:22:45.229+0800	INFO	middlewares/logger.go:79	/api/message/list/time	{"status": 200, "method": "GET", "path": "/api/message/list/time", "query": "relation_id=5&last_time=1&page=1&page_size=2", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0168032}
+2025-07-28T21:22:57.368+0800	INFO	middlewares/logger.go:79	/api/message/list/time	{"status": 200, "method": "GET", "path": "/api/message/list/time", "query": "relation_id=5&last_time=11111111111111111111111111111&page=1&page_size=2", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005083}
+2025-07-28T21:23:03.051+0800	INFO	middlewares/logger.go:79	/api/message/list/time	{"status": 200, "method": "GET", "path": "/api/message/list/time", "query": "relation_id=5&last_time=111111111111111111111111&page=1&page_size=2", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.000715}
+2025-07-28T21:23:08.068+0800	INFO	middlewares/logger.go:79	/api/message/list/time	{"status": 200, "method": "GET", "path": "/api/message/list/time", "query": "relation_id=5&last_time=111111111111111111&page=1&page_size=2", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-28T21:23:11.805+0800	INFO	middlewares/logger.go:79	/api/message/list/time	{"status": 200, "method": "GET", "path": "/api/message/list/time", "query": "relation_id=5&last_time=111111111111&page=1&page_size=2", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-28T21:23:24.451+0800	INFO	middlewares/logger.go:79	/api/message/list/time	{"status": 200, "method": "GET", "path": "/api/message/list/time", "query": "relation_id=5&last_time=11111111&page=1&page_size=2", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0018183}
+2025-07-28T21:23:27.866+0800	INFO	middlewares/logger.go:79	/api/message/list/time	{"status": 200, "method": "GET", "path": "/api/message/list/time", "query": "relation_id=5&last_time=111111111&page=1&page_size=2", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005288}
+2025-07-28T21:23:29.971+0800	INFO	middlewares/logger.go:79	/api/message/list/time	{"status": 200, "method": "GET", "path": "/api/message/list/time", "query": "relation_id=5&last_time=1111111111&page=1&page_size=2", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.000505}
+2025-07-28T21:23:32.514+0800	INFO	middlewares/logger.go:79	/api/message/list/time	{"status": 200, "method": "GET", "path": "/api/message/list/time", "query": "relation_id=5&last_time=11111111111&page=1&page_size=2", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-28T21:25:04.837+0800	INFO	middlewares/logger.go:79	/api/message/list/time	{"status": 200, "method": "GET", "path": "/api/message/list/time", "query": "relation_id=5&last_time=1762473600&page=1&page_size=2", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0068952}
+2025-07-28T21:25:17.367+0800	INFO	middlewares/logger.go:79	/api/message/list/time	{"status": 200, "method": "GET", "path": "/api/message/list/time", "query": "relation_id=5&last_time=1762473600&page=1&page_size=5", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0021}
+2025-07-28T21:25:33.235+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-28T21:25:33.236+0800	INFO	im/main.go:91	Server exit
+2025-07-28T21:32:27.467+0800	INFO	settings/load.go:38	邮箱加载完成
+2025-07-28T21:32:27.482+0800	INFO	settings/load.go:61	关系名单加载完成
+2025-07-28T21:32:27.488+0800	INFO	im/main.go:45	Server is started!
+2025-07-28T21:34:04.446+0800	INFO	middlewares/logger.go:79	/api/message/list/offer	{"status": 200, "method": "GET", "path": "/api/message/list/offer", "query": "last_time=1762473600&page=1&page_size=5", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-28T21:34:09.462+0800	INFO	middlewares/logger.go:79	/api/message/list/offer	{"status": 200, "method": "GET", "path": "/api/message/list/offer", "query": "last_time=1762473600&page=1&page_size=5", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.008404}
+2025-07-28T21:34:19.586+0800	INFO	middlewares/logger.go:79	/api/message/list/offer	{"status": 200, "method": "GET", "path": "/api/message/list/offer", "query": "last_time=176247360&page=1&page_size=5", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.001126}
+2025-07-28T21:38:53.009+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-28T21:38:53.010+0800	INFO	im/main.go:91	Server exit
+2025-07-28T21:39:01.008+0800	INFO	settings/load.go:38	邮箱加载完成
+2025-07-28T21:39:01.018+0800	INFO	settings/load.go:61	关系名单加载完成
+2025-07-28T21:39:01.021+0800	INFO	im/main.go:45	Server is started!
+2025-07-28T21:40:15.814+0800	INFO	middlewares/logger.go:79	/api/message/list/pin	{"status": 200, "method": "GET", "path": "/api/message/list/pin", "query": "relation_id=176247360&page=1&page_size=5", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0053143}
+2025-07-28T21:40:28.851+0800	INFO	middlewares/logger.go:79	/api/message/list/pin	{"status": 200, "method": "GET", "path": "/api/message/list/pin", "query": "relation_id=5&page=1&page_size=5", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0051424}
+2025-07-28T21:40:38.639+0800	INFO	middlewares/logger.go:79	/api/message/list/pin	{"status": 200, "method": "GET", "path": "/api/message/list/pin", "query": "relation_id=5&page=1&page_size=0", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0015981}
+2025-07-28T21:40:48.083+0800	INFO	middlewares/logger.go:79	/api/message/list/pin	{"status": 200, "method": "GET", "path": "/api/message/list/pin", "query": "relation_id=5&page=2&page_size=1", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0010394}
+2025-07-28T21:40:55.246+0800	INFO	middlewares/logger.go:79	/api/message/list/pin	{"status": 200, "method": "GET", "path": "/api/message/list/pin", "query": "relation_id=5&page=1&page_size=5", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0010777}
+2025-07-28T21:43:59.280+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-28T21:43:59.282+0800	INFO	im/main.go:91	Server exit
+2025-07-28T21:44:06.740+0800	INFO	settings/load.go:38	邮箱加载完成
+2025-07-28T21:44:06.749+0800	INFO	settings/load.go:61	关系名单加载完成
+2025-07-28T21:44:06.751+0800	INFO	im/main.go:45	Server is started!
+2025-07-28T21:45:24.064+0800	INFO	middlewares/logger.go:79	/api/message/list/reply	{"status": 200, "method": "GET", "path": "/api/message/list/reply", "query": "relation_id=5&page=1&page_size=5&msg_id=8", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0005063}
+2025-07-28T21:45:29.336+0800	INFO	middlewares/logger.go:79	/api/message/list/reply	{"status": 200, "method": "GET", "path": "/api/message/list/reply", "query": "relation_id=5&page=1&page_size=5&msg_id=8", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0061847}
+2025-07-28T21:51:56.672+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-28T21:51:56.673+0800	INFO	im/main.go:91	Server exit
+2025-07-28T21:52:07.613+0800	INFO	settings/load.go:38	邮箱加载完成
+2025-07-28T21:52:07.621+0800	INFO	settings/load.go:61	关系名单加载完成
+2025-07-28T21:52:07.624+0800	INFO	im/main.go:45	Server is started!
+2025-07-28T21:53:21.160+0800	INFO	middlewares/logger.go:79	/api/message/list/reply	{"status": 200, "method": "GET", "path": "/api/message/list/reply", "query": "relation_id=5&page=1&page_size=5&content=%E4%BD%A0", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0}
+2025-07-28T21:53:26.407+0800	INFO	middlewares/logger.go:79	/api/message/list/reply	{"status": 200, "method": "GET", "path": "/api/message/list/reply", "query": "relation_id=5&page=1&page_size=5&content=%E4%BD%A0", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0040502}
+2025-07-28T21:53:48.337+0800	INFO	middlewares/logger.go:79	/api/message/list/content	{"status": 200, "method": "GET", "path": "/api/message/list/content", "query": "relation_id=5&page=1&page_size=5&content=%E4%BD%A0", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0121104}
+2025-07-28T21:54:00.961+0800	INFO	middlewares/logger.go:79	/api/message/list/content	{"status": 200, "method": "GET", "path": "/api/message/list/content", "query": "relation_id=5&page=1&page_size=5&content=ha", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0013414}
+2025-07-28T21:54:54.101+0800	INFO	middlewares/logger.go:79	/api/message/list/content	{"status": 200, "method": "GET", "path": "/api/message/list/content", "query": "relation_id=5&page=1&page_size=5&content=%E5%A5%BD", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0017111}
+2025-07-28T21:54:59.624+0800	INFO	middlewares/logger.go:79	/api/message/list/content	{"status": 200, "method": "GET", "path": "/api/message/list/content", "query": "relation_id=5&page=1&page_size=5&content=123", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0017282}
+2025-07-28T21:55:09.378+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-28T21:55:09.378+0800	INFO	im/main.go:91	Server exit
+2025-07-28T21:55:14.189+0800	INFO	settings/load.go:38	邮箱加载完成
+2025-07-28T21:55:14.198+0800	INFO	settings/load.go:61	关系名单加载完成
+2025-07-28T21:55:14.199+0800	INFO	im/main.go:45	Server is started!
+2025-07-28T21:55:16.439+0800	INFO	middlewares/logger.go:79	/api/message/list/content	{"status": 200, "method": "GET", "path": "/api/message/list/content", "query": "relation_id=5&page=1&page_size=5&content=123", "ip": "127.0.0.1", "user-agent": "PostmanRuntime/7.44.1", "error": "", "cost": 0.0047489}
+2025-07-28T21:55:44.234+0800	INFO	im/main.go:80	Shutdown Server ...
+2025-07-28T21:55:44.235+0800	INFO	im/main.go:91	Server exit

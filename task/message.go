@@ -6,6 +6,7 @@ import (
 	"im/model/chat"
 	"im/model/chat/server"
 	"im/model/reply"
+	"im/pkg/rocketmq/producer"
 
 	"github.com/XYYSWK/Lutils/pkg/utils"
 )
@@ -28,7 +29,8 @@ func PublishMsg(msg reply.ParamMsgInfoWithRly) func() {
 			if global.ChatMap.CheckIsOnConnection(accountID) {
 				global.ChatMap.Send(accountID, chat.ClientSendMsg, msg)
 			} else {
-				// todo 用户处于离线状态，将消息发送至MQ中
+				// 用户处于离线状态，将消息发送至MQ中
+				producer.SendMsgToMQ(accountID, msg)
 			}
 		}
 	}
@@ -55,6 +57,25 @@ func ReadMsg(accessToken string, readerID int64, msgMap map[int64][]int64, allMs
 			EnToken:  enToken,
 			MsgIDs:   allMsgIDs,
 			ReaderID: readerID,
+		})
+	}
+}
+
+// UpdateMsgState 更新消息状态
+func UpdateMsgState(accessToken string, relationID, msgID int64, msgType server.MsgType, state bool) func() {
+	return func() {
+		ctx, cancel := global.DefaultContextWithTimeout()
+		defer cancel()
+		accountIDs, err := dao.Database.Redis.GetAllAccountsByRelationID(ctx, relationID)
+		if err != nil {
+			global.Logger.Error(err.Error())
+			return
+		}
+		global.ChatMap.SendMany(accountIDs, chat.ServerUpdateMsgState, server.UpdateMsgState{
+			EnToken: utils.EncodeMD5(accessToken),
+			MsgType: msgType,
+			MsgID:   msgID,
+			State:   state,
 		})
 	}
 }

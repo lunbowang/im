@@ -23,12 +23,16 @@ func (message) SendMsg(s socketio.Conn, msg string) string {
 	if !ok {
 		return ""
 	}
+	// 解析客户端发送的消息参数
 	params := new(client.HandleSendMsgParams)
 	if err := common.Decode(msg, params); err != nil {
 		return common.NewState(errcode.ErrParamsNotValid.WithDetails(err.Error())).MustJson()
 	}
+	// 创建带超时时间的上下文，防止操作时间过长
 	ctx, cancel := global.DefaultContextWithTimeout()
 	defer cancel()
+
+	// 发送消息
 	result, myErr := chat.Group.Message.SendMsg(ctx, &model.HandleSendMsg{
 		AccessToken: token.AccessToken,
 		RelationID:  params.RelationID,
@@ -52,6 +56,8 @@ func (message) ReadMsg(s socketio.Conn, msg string) string {
 	if err := common.Decode(msg, params); err != nil {
 		return common.NewState(errcode.ErrParamsNotValid.WithDetails(err.Error())).MustJson()
 	}
+
+	// 创建带超时的上下文
 	ctx, cancel := global.DefaultContextWithTimeout()
 	defer cancel()
 	myErr := chat.Group.Message.ReadMsg(ctx, &model.HandleReadMsg{

@@ -17,6 +17,7 @@ import (
 
 func PublishMsg(msg reply.ParamMsgInfoWithRly) func() {
 	return func() {
+		// 创建有超时事件的上下文
 		ctx, cancel := global.DefaultContextWithTimeout()
 		defer cancel()
 		accountIDs, err := dao.Database.Redis.GetAllAccountsByRelationID(ctx, msg.RelationID)
